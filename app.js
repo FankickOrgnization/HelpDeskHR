@@ -5,9 +5,9 @@ var bodyParser = require('body-parser');
 var mysql = require('mysql');
 const fetch = require('node-fetch');
 const crypto = require('crypto');
-const thread = require('./thread.js');
-const payloadText = require('./payload.js');
-const searchText = require('./search.js');
+//const thread = require('./thread.js');
+//const payloadText = require('./payload.js');
+//const searchText = require('./search.js');
 
 var pool = mysql.createPool({
     connectionLimit : 2,
@@ -43,7 +43,8 @@ app.get('/webhook', function(req, res) {
     //console.log("Validating webhook", console.log(JSON.stringify(req.body)));
     console.log("######################################", res);
     if (req.query['hub.mode'] === 'subscribe' &&
-        req.query['hub.verify_token'] === 'login_type') {
+        req.query['hub.verify_token'] === 'hrlogin_type') {
+          //req.query['hub.verify_token'] === 'login_type') {
         res.status(200).send(req.query['hub.challenge']);
     } else {
         console.error("Failed validation. Make sure the validation tokens match.");
