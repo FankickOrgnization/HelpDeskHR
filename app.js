@@ -9,35 +9,35 @@ const crypto = require('crypto');
 //const payloadText = require('./payload.js');
 //const searchText = require('./search.js');
 
-var pool = mysql.createPool({
-    connectionLimit : 2,
-    host: 'ap-cdbr-azure-southeast-a.cloudapp.net',
-    user: 'bb603e8108da6e',
-    password: '3e384329',
-    database: 'rankworlddev'
-});
-var quickMenu = [
-  {
-    "content_type":"text",
-    "title":"Categories",
-    "payload":"Categories"
-  },
-  {
-    "content_type":"text",
-    "title":"Fan Clubs",
-    "payload":"Fan Clubs"
-  },
-  {
-    "content_type":"text",
-    "title":"Fan Magazine",
-    "payload":"Fan Magazine"
-  }
-];
+// var pool = mysql.createPool({
+//     connectionLimit : 2,
+//     host: 'ap-cdbr-azure-southeast-a.cloudapp.net',
+//     user: 'bb603e8108da6e',
+//     password: '3e384329',
+//     database: 'rankworlddev'
+// });
+// var quickMenu = [
+//   {
+//     "content_type":"text",
+//     "title":"Categories",
+//     "payload":"Categories"
+//   },
+//   {
+//     "content_type":"text",
+//     "title":"Fan Clubs",
+//     "payload":"Fan Clubs"
+//   },
+//   {
+//     "content_type":"text",
+//     "title":"Fan Magazine",
+//     "payload":"Fan Magazine"
+//   }
+// ];
 
 app.use(bodyParser.json());
 var fbpage_access_token = 'EAAXcJew5yNkBAAvFD3wX3RZACdvA4lZB6XStBzliKI9y4m7I1taAnWUWBezVarL8FjteZCztMBjXZCs35lAweqmc2XZARIf378LZA5lTg5xIebmBmFL4MmJGU4JrowfdkkKDbjqwuzBkCWPxQjgddrW4EZBnv6LiccAHdqoLUNcsgZDZD';
 
-var quickMenu = payloadText.quickMenu;
+//var quickMenu = payloadText.quickMenu;
 
 app.get('/webhook', function(req, res) {
     //console.log("Validating webhook", console.log(JSON.stringify(req.body)));
@@ -101,7 +101,7 @@ function receivedpostback(messagingEvent) {
     var packId = parseInt(categoryName);
     if (isNaN(packId)) {
         //sendContentPacks(messageText, event);
-        payloadText.sendContentPacks(categoryName, messagingEvent)
+        //payloadText.sendContentPacks(categoryName, messagingEvent)
     } else if (categoryName == "Quizzes") {
         quizzesPacks(categoryName, messagingEvent);
         console.log("categoryName########", categoryName);
