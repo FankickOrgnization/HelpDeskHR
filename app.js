@@ -44,7 +44,7 @@ app.get('/webhook', function(req, res) {
     console.log("######################################", res);
     if (req.query['hub.mode'] === 'subscribe' &&
         //req.query['hub.verify_token'] === 'hrlogin_type') {
-        req.query['hub.verify_token'] === 'login_type') {
+        req.query['hub.verify_token'] === 'token') {
         res.status(200).send(req.query['hub.challenge']);
     } else {
         console.error("Failed validation. Make sure the validation tokens match.");
