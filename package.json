@@ -1,0 +1,28 @@
+{
+  "name": "helpdeskhr",
+  "version": "1.0.0",
+  "description": "this is hr portal chatbot",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FankickOrgnization/HelpDeskHR.git"
+  },
+  "keywords": [
+    "hr",
+    "portal"
+  ],
+  "author": "Narendranath",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FankickOrgnization/HelpDeskHR/issues"
+  },
+  "homepage": "https://github.com/FankickOrgnization/HelpDeskHR#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "request": "^2.75.0"
+  }
+}
