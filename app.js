@@ -7,7 +7,7 @@ const fetch = require('node-fetch');
 const crypto = require('crypto');
 console.log("Hi");
 //const thread = require('./thread.js');
-//const payloadText = require('./payload.js');
+const payloadText = require('./payload.js');
 //const searchText = require('./search.js');
 
 // var pool = mysql.createPool({
@@ -37,7 +37,7 @@ console.log("Hi");
 
 app.use(bodyParser.json());
 var fbpage_access_token = 'EAAP946SZAFSABAA2DblwHSI8NEGhveWSCM8JZAkEwbg6u2ZAZBpQZCXZBrp6vdbMEEiU6J7GM0iNSZBKbG4mPkugibMs8OnKCZAtgZBgjfTUDRZC52OnseyQ0P2lSH1v9cruCAlSW5c7QHmNr5ov06D4csZBQTacLd3fzelkee2QEZAEtwZDZD';
-//var quickMenu = payloadText.quickMenu;
+var quickMenu = payloadText.quickMenu;
 
 app.get('/webhook', function(req, res) {
     //console.log("Validating webhook", console.log(JSON.stringify(req.body)));
@@ -102,7 +102,7 @@ function receivedpostback(messagingEvent) {
     var packId = parseInt(categoryName);
     if (isNaN(packId)) {
         //sendContentPacks(messageText, event);
-        //payloadText.sendContentPacks(categoryName, messagingEvent)
+        payloadText.sendContentPacks(categoryName, messagingEvent)
     } else if (categoryName == "Quizzes") {
         quizzesPacks(categoryName, messagingEvent);
         console.log("categoryName########", categoryName);
