@@ -35,7 +35,7 @@ const crypto = require('crypto');
 // ];
 
 app.use(bodyParser.json());
-var fbpage_access_token = 'EAAXcJew5yNkBAAvFD3wX3RZACdvA4lZB6XStBzliKI9y4m7I1taAnWUWBezVarL8FjteZCztMBjXZCs35lAweqmc2XZARIf378LZA5lTg5xIebmBmFL4MmJGU4JrowfdkkKDbjqwuzBkCWPxQjgddrW4EZBnv6LiccAHdqoLUNcsgZDZD';
+var fbpage_access_token = 'EAAP946SZAFSABAMP2eCgAvLzN3LcaVUEs70meUntZBZBEbnNtwZBA2DhfWsljKgdpW7soLkYBlgdzNLY2oK3gwWHuP3h5aeZB18YUHOBK1bC8Dfp8sdJBlwKIHJdvyrjCIeDdN6pgwvd5ZBB1piZAfItorT0b8v4ageMjLueTeA2gZDZD';
 
 //var quickMenu = payloadText.quickMenu;
 
