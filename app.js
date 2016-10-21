@@ -35,8 +35,7 @@ const crypto = require('crypto');
 // ];
 
 app.use(bodyParser.json());
-var fbpage_access_token = 'EAAP946SZAFSABAMP2eCgAvLzN3LcaVUEs70meUntZBZBEbnNtwZBA2DhfWsljKgdpW7soLkYBlgdzNLY2oK3gwWHuP3h5aeZB18YUHOBK1bC8Dfp8sdJBlwKIHJdvyrjCIeDdN6pgwvd5ZBB1piZAfItorT0b8v4ageMjLueTeA2gZDZD';
-
+var fbpage_access_token = 'EAAP946SZAFSABAA2DblwHSI8NEGhveWSCM8JZAkEwbg6u2ZAZBpQZCXZBrp6vdbMEEiU6J7GM0iNSZBKbG4mPkugibMs8OnKCZAtgZBgjfTUDRZC52OnseyQ0P2lSH1v9cruCAlSW5c7QHmNr5ov06D4csZBQTacLd3fzelkee2QEZAEtwZDZD';
 //var quickMenu = payloadText.quickMenu;
 
 app.get('/webhook', function(req, res) {
@@ -55,6 +54,7 @@ app.get('/webhook', function(req, res) {
 app.post('/webhook', function(req, res) {
     var data = req.body;
     // Make sure this is a page subscription
+    console.log('data object',data);
     if (data.object == 'page') {
         // Iterate over each entry
         // There may be multiple if batched
