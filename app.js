@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var mysql = require('mysql');
 const fetch = require('node-fetch');
 const crypto = require('crypto');
+console.log("Hi");
 //const thread = require('./thread.js');
 //const payloadText = require('./payload.js');
 //const searchText = require('./search.js');
