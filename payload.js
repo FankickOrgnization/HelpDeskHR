@@ -295,8 +295,7 @@ const sendContentPacks = (categoryName,event) => {
             sendHelpMessage(event);
         }
     }else {
-      if(){
-      }else {
+
         pool.getConnection(function(err, connection) {
           connection.query('SELECT * FROM fk_content_pack where category_id = (SELECT id FROM fk_category where name = ?)', [categoryName], function(err, rows) {
               if (err) {
@@ -375,7 +374,7 @@ const sendContentPacks = (categoryName,event) => {
           });
           });
 
-      }
+      
     }
 }
 function quizzes(event){
