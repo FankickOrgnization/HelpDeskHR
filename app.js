@@ -368,7 +368,7 @@ function sendHelpMessage(event){
         console.log("--------:Response data:-------- timezone", userprofiledata.timezone);
         console.log("--------:Response data:--------gender ", userprofiledata.gender);
         var senderID = event.sender.id;
-        var msg = 'Hi '+username+'!, What brings you here…';
+        var msg = 'Hi '+username+'!,\n\nMay I know your query…';
         //var msg = 'Hey '+username+', How are you?';
         console.log("--------:Response data:--------sendHelpMessage1", msg);
         var messageData = {
@@ -382,13 +382,13 @@ function sendHelpMessage(event){
                 "quick_replies":[
                   {
                     "content_type":"text",
-                    "title":"Code of Conduct",
-                    "payload":"Code of Conduct"
+                    "title":"Leave Policies",
+                    "payload":"Leave Policies"
                   },
                   {
                     "content_type":"text",
-                    "title":"Holiday List",
-                    "payload":"Holiday List"
+                    "title":"Benefits",
+                    "payload":"Benefits"
                   },
                   {
                     "content_type":"text",
@@ -397,30 +397,15 @@ function sendHelpMessage(event){
                   },
                   {
                     "content_type":"text",
-                    "title":"Leave Policy",
-                    "payload":"Leave Policy"
+                    "title":"Code of Conduct",
+                    "payload":"Code of Conduct"
                   },
                   {
                     "content_type":"text",
-                    "title":"L&D Center",
-                    "payload":"L&D Center"
-                  },
-                  {
-                    "content_type":"text",
-                    "title":"Hiring",
-                    "payload":"Hiring"
-                  },
-                  {
-                    "content_type":"text",
-                    "title":"Health Insurance",
-                    "payload":"Health Insurance"
-                  },
-                  {
-                    "content_type":"text",
-                    "title":"Exit Policy",
-                    "payload":"Exit Policy"
+                    "title":"Exit Policies",
+                    "payload":"Exit Policies"
                   }
-                ]
+                ];
               }
             }
         // callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');

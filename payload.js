@@ -15,13 +15,13 @@ var fbpage_access_token = 'EAAP946SZAFSABAOdfz6BR3ReQ3L7eBRlZCdUOTLgPsEzDk8JChwS
 var quickreply = [
   {
     "content_type":"text",
-    "title":"Code of Conduct",
-    "payload":"Code of Conduct"
+    "title":"Leave Policies",
+    "payload":"Leave Policies"
   },
   {
     "content_type":"text",
-    "title":"Holiday List",
-    "payload":"Holiday List"
+    "title":"Benefits",
+    "payload":"Benefits"
   },
   {
     "content_type":"text",
@@ -30,23 +30,8 @@ var quickreply = [
   },
   {
     "content_type":"text",
-    "title":"Leave Policy",
-    "payload":"Leave Policy"
-  },
-  {
-    "content_type":"text",
-    "title":"L&D Center",
-    "payload":"L&D Center"
-  },
-  {
-    "content_type":"text",
-    "title":"Hiring",
-    "payload":"Hiring"
-  },
-  {
-    "content_type":"text",
-    "title":"Health Insurance",
-    "payload":"Health Insurance"
+    "title":"Code of Conduct",
+    "payload":"Code of Conduct"
   },
   {
     "content_type":"text",
@@ -242,33 +227,32 @@ const sendContentPacks = (categoryName,event) => {
             connection.release();
         });
         });
-    }else if (categoryName == "Code of Conduct") {
-      if (categoryName == "Code of Conduct"){
+    }else if (categoryName == "Leave Policies") {
+      if (categoryName == "Leave Policies"){
         var senderID = event.sender.id;
         var messageData = {
             "recipient": {
                 "id": senderID
             },
             "message":{
-                "text":"Code of Conduct",
-                "quick_replies":quickreply
-                // [
-                //   {
-                //     "content_type":"text",
-                //     "title":"Apply",
-                //     "payload":"Apply"
-                //   },
-                //   {
-                //     "content_type":"text",
-                //     "title":"Leave Balance",
-                //     "payload":"Leave Balance"
-                //   },
-                //   {
-                //     "content_type":"text",
-                //     "title":"Holidays",
-                //     "payload":"Holidays"
-                //   }
-                // ]
+                "text":"What do you want know about leaves…",
+                "quick_replies":[
+                  {
+                    "content_type":"text",
+                    "title":"Leave Types",
+                    "payload":"Leave Types"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Leave Balance",
+                    "payload":"Leave Balance"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"How to apply a leave",
+                    "payload":"How to apply a leave"
+                  }
+                ]
               }
         }
       //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
@@ -277,33 +261,71 @@ const sendContentPacks = (categoryName,event) => {
             console.log("No Data Found From Database");
             sendHelpMessage(event);
         }
-    }else if (categoryName == "Holiday List") {
-      if (categoryName == "Holiday List"){
+    }else if (categoryName == "Benefits") {
+      if (categoryName == "Benefits"){
         var senderID = event.sender.id;
         var messageData = {
             "recipient": {
                 "id": senderID
             },
             "message":{
-                "text":"Holiday List",
-                "quick_replies":quickreply
-                // [
-                //   {
-                //     "content_type":"text",
-                //     "title":"Apply",
-                //     "payload":"Apply"
-                //   },
-                //   {
-                //     "content_type":"text",
-                //     "title":"Leave Balance",
-                //     "payload":"Leave Balance"
-                //   },
-                //   {
-                //     "content_type":"text",
-                //     "title":"Holidays",
-                //     "payload":"Holidays"
-                //   }
-                // ]
+                "text":"What do you want to know about benefits…",
+                "quick_replies":[
+                  {
+                    "content_type":"text",
+                    "title":"Insurance",
+                    "payload":"Apply"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Bonus",
+                    "payload":"Bonus"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Provident Fund",
+                    "payload":"PF"
+                  }
+                ]
+              }
+        }
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+        }else {
+            console.log("No Data Found From Database");
+            sendHelpMessage(event);
+        }
+    }else if (categoryName == "Exit Policies") {
+      if (categoryName == "Exit Policies"){
+        var senderID = event.sender.id;
+        var messageData = {
+            "recipient": {
+                "id": senderID
+            },
+            "message":{
+                "text":"What do you want to know about exit policies…",
+                "quick_replies":[
+                  {
+                    "content_type":"text",
+                    "title":"Notice Period",
+                    "payload":"Notice Period"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Special Concerns",
+                    "payload":"Special Concerns"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Relieving Letter",
+                    "payload":"Relieving Letter"
+                  },
+                {
+                    "content_type":"text",
+                    "title":"Settlement",
+                    "payload":"Settlement"
+                  }
+                ]
               }
         }
       //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
@@ -320,25 +342,24 @@ const sendContentPacks = (categoryName,event) => {
                 "id": senderID
             },
             "message":{
-                "text":"Payroll",
-                "quick_replies":quickreply
-                // [
-                //   {
-                //     "content_type":"text",
-                //     "title":"Apply",
-                //     "payload":"Apply"
-                //   },
-                //   {
-                //     "content_type":"text",
-                //     "title":"Leave Balance",
-                //     "payload":"Leave Balance"
-                //   },
-                //   {
-                //     "content_type":"text",
-                //     "title":"Holidays",
-                //     "payload":"Holidays"
-                //   }
-                // ]
+                "text":"What do you want to know about payroll…",
+                "quick_replies":[
+                  {
+                    "content_type":"text",
+                    "title":"Pay Slips",
+                    "payload":"Pay Slips"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Claims",
+                    "payload":"Claims"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Payroll Policy",
+                    "payload":"Payroll Policy"
+                  }
+                ]
               }
         }
       //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
@@ -347,43 +368,8 @@ const sendContentPacks = (categoryName,event) => {
             console.log("No Data Found From Database");
             sendHelpMessage(event);
         }
-    }else if (categoryName == "Leave Policy") {
-      if (categoryName == "Leave Policy"){
-        var senderID = event.sender.id;
-        var messageData = {
-            "recipient": {
-                "id": senderID
-            },
-            "message":{
-                "text":"Leave Policy",
-                "quick_replies":quickreply
-                // [
-                //   {
-                //     "content_type":"text",
-                //     "title":"Apply",
-                //     "payload":"Apply"
-                //   },
-                //   {
-                //     "content_type":"text",
-                //     "title":"Leave Balance",
-                //     "payload":"Leave Balance"
-                //   },
-                //   {
-                //     "content_type":"text",
-                //     "title":"Holidays",
-                //     "payload":"Holidays"
-                //   }
-                // ]
-              }
-        }
-      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
-          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
-        }else {
-            console.log("No Data Found From Database");
-            sendHelpMessage(event);
-        }
-    }else if (categoryName == "L&D Center") {
-      if (categoryName == "L&D Center"){
+    }else if (categoryName == "Code of Conduct") {
+      if (categoryName == "Code of Conduct"){
         var senderID = event.sender.id;
         var messageData = {
             "recipient": {
@@ -417,33 +403,16 @@ const sendContentPacks = (categoryName,event) => {
             console.log("No Data Found From Database");
             sendHelpMessage(event);
         }
-    }else if (categoryName == "Hiring") {
-      if (categoryName == "Hiring"){
+    }else if (categoryName == "Leave Balance") {
+      if (categoryName == "Leave Balance"){
         var senderID = event.sender.id;
         var messageData = {
             "recipient": {
                 "id": senderID
             },
             "message":{
-                "text":"Hiring",
+                "text":"Let me know your employee ID…",
                 "quick_replies":quickreply
-                // [
-                //   {
-                //     "content_type":"text",
-                //     "title":"Apply",
-                //     "payload":"Apply"
-                //   },
-                //   {
-                //     "content_type":"text",
-                //     "title":"Leave Balance",
-                //     "payload":"Leave Balance"
-                //   },
-                //   {
-                //     "content_type":"text",
-                //     "title":"Holidays",
-                //     "payload":"Holidays"
-                //   }
-                // ]
               }
         }
       //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
@@ -452,33 +421,16 @@ const sendContentPacks = (categoryName,event) => {
             console.log("No Data Found From Database");
             sendHelpMessage(event);
         }
-    }else if (categoryName == "Health Insurance") {
-      if (categoryName == "Health Insurance"){
+    }else if (categoryName == "Notice Period") {
+      if (categoryName == "Notice Period"){
         var senderID = event.sender.id;
         var messageData = {
             "recipient": {
                 "id": senderID
             },
             "message":{
-                "text":"Health Insurance",
+                "text":"Let me know your employee ID…",
                 "quick_replies":quickreply
-                // [
-                //   {
-                //     "content_type":"text",
-                //     "title":"Apply",
-                //     "payload":"Apply"
-                //   },
-                //   {
-                //     "content_type":"text",
-                //     "title":"Leave Balance",
-                //     "payload":"Leave Balance"
-                //   },
-                //   {
-                //     "content_type":"text",
-                //     "title":"Holidays",
-                //     "payload":"Holidays"
-                //   }
-                // ]
               }
         }
       //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
@@ -487,43 +439,8 @@ const sendContentPacks = (categoryName,event) => {
             console.log("No Data Found From Database");
             sendHelpMessage(event);
         }
-    }else if (categoryName == "Exit Policy") {
-      if (categoryName == "Exit Policy"){
-        var senderID = event.sender.id;
-        var messageData = {
-            "recipient": {
-                "id": senderID
-            },
-            "message":{
-                "text":"Exit Policy",
-                "quick_replies":quickreply
-                // [
-                //   {
-                //     "content_type":"text",
-                //     "title":"Apply",
-                //     "payload":"Apply"
-                //   },
-                //   {
-                //     "content_type":"text",
-                //     "title":"Leave Balance",
-                //     "payload":"Leave Balance"
-                //   },
-                //   {
-                //     "content_type":"text",
-                //     "title":"Holidays",
-                //     "payload":"Holidays"
-                //   }
-                // ]
-              }
-        }
-      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
-          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
-        }else {
-            console.log("No Data Found From Database");
-            sendHelpMessage(event);
-        }
-    }else if (categoryName == "Apply") {
-      if (categoryName == "Apply"){
+    }else if (categoryName == "Pay Slips") {
+      if (categoryName == "Pay Slips"){
         var senderID = event.sender.id;
         var messageData = {
             "recipient": {
@@ -619,88 +536,7 @@ const sendContentPacks = (categoryName,event) => {
               connection.release();
           });
           });
-
-
     }
-}
-function quizzes(event){
-  var senderID = event.sender.id;
-  // if(categoryName == "Content Pack 1"){
-  //   categoryName = 1;
-  // } else if (categoryName == "Content Pack 2"){
-  //   categoryName = 2;
-  // } else (categoryName == "Content Pack 3"){
-  //   categoryName = 3;
-  // }
-
-  pool.getConnection(function(err, connection) {
-  //connection.query('SELECT * FROM fk_pack_multiple_item where type=? and pack_id in (select id from fk_content_pack where category_id=?)', ['Question',categoryName], function(err, rows) {
-  connection.query('SELECT * FROM fk_pack_multiple_item where pack_id=(select id from fk_content_pack where name="Aamir Khan")and type=?', ['Question'], function(err, rows) {
-
-      //console.log("*************************-after", categoryName);
-      console.log("*************************Questions Packs********************", rows);
-      if (err) {
-          console.log("Error While retriving content pack data from database:", err);
-      } else if (rows.length) {
-          var senderID = event.sender.id;
-          var contentList = [];
-          // for (var i = 0; i < 5; i++) { //Construct request body
-          //     var keyMap = {
-          //         "title": rows[i].item_name,
-          //         "image_url": rows[i].imageurl,
-          //         "item_url": rows[i].imageurl
-          //         // "buttons": [{
-          //         //     "type": "postback",
-          //         //     "title": "Read More",
-          //         //     "payload": "USER_DEFINED_PAYLOAD"
-          //         // }]
-          //     };
-          //     contentList.push(keyMap);
-          // }
-          var messageData = {
-              "recipient": {
-                  "id": senderID
-              },
-              "message":{
-                  "text":rows[2].item_name,
-                  "quick_replies":[
-                    {
-                      "content_type":"text",
-                      "title":rows[2].text1_content,
-                      "payload":"1"
-                    },
-                    {
-                      "content_type":"text",
-                      "title":rows[2].text2_content,
-                      "payload":"2"
-                    },
-                    {
-                      "content_type":"text",
-                      "title":rows[2].text3_content,
-                      "payload":"3"
-                    },
-                    {
-                      "content_type":"text",
-                      "title":rows[2].text4_content,
-                      "payload":"4"
-                    },
-                    {
-                      "content_type":"text",
-                      "title":"Categories",
-                      "payload":"Categories"
-                    }
-                  ]
-                }
-          }
-          //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
-            callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
-      } else {
-          console.log("No Data Found From Database");
-          sendHelpMessage(event);
-      }
-      connection.release();
-  });
-  });
 }
 
 function celebritiesdetails(categoryName,event){
@@ -775,7 +611,7 @@ function sendHelpMessage(event){
         console.log("--------:Response data:-------- timezone", userprofiledata.timezone);
         console.log("--------:Response data:--------gender ", userprofiledata.gender);
         var senderID = event.sender.id;
-        var msg = 'Hi '+username+'!,\n \nWhat brings you here…';
+        var msg = 'Hi '+username+'!,\n \nMay I know your query…';
         //var msg = 'Hey '+username+', How are you?';
         console.log("--------:Response data:--------sendHelpMessage1", msg);
         var messageData = {
@@ -824,7 +660,7 @@ function fbuserdetails(event, userid) {
         var senderID = event.sender.id;
         //var msg = 'Hi '+username+', A lot of exciting things are awaiting for you! Get kicking!';
         //var msg = 'Hi '+username+'! My name is Kicker.\n How may I come of any help to you today?';
-        var msg = 'Hi '+username+'!\n \nI am Eva, your personal HR assistant…\n \nHow may I help you…';
+        var msg = 'Hi '+username+'!\n \nI am Acolyte, your personal HR assistant…\n \nHow may I help you…';
   //var msg = 'Hi '+username+'! My name is Kicker.';
         console.log("--------:Response data:--------msg1 ", msg);
         var messageData = {
@@ -851,7 +687,6 @@ function fbuserdetails(event, userid) {
             console.error("Error while sending message:", error);
         }
     });
-
 }
 
 function callSendAPI(body, url) {
