@@ -13,21 +13,21 @@ var pool = mysql.createPool({
 });
 var fbpage_access_token = 'EAAP946SZAFSABAOdfz6BR3ReQ3L7eBRlZCdUOTLgPsEzDk8JChwSPdFZAaliRqbBeA4PubeQ6mwBCcV7xLOhydsZBKtCxrZAsyZCvb2QogaUZCLAvWDujqGllYAh4eW1sUZAsqLo2lEb29jtgdURZAeZCIarXGTLo46xJau48BOZC94rgZDZD';
 var quickreply = [
-    {
-      "content_type":"text",
-      "title":"Categories",
-      "payload":"Categories"
-    },
-    {
-      "content_type":"text",
-      "title":"Fan Clubs",
-      "payload":"Fan Clubs"
-    },
-    {
-      "content_type":"text",
-      "title":"Fan Magazine",
-      "payload":"Fan Magazine"
-    }
+  {
+    "content_type":"text",
+    "title":"Leave",
+    "payload":"Leave"
+  },
+  {
+    "content_type":"text",
+    "title":"Pay slip",
+    "payload":"Pay slip"
+  },
+  {
+    "content_type":"text",
+    "title":"Other",
+    "payload":"Other"
+  }
 ];
 var moviesObj =  [
   {
@@ -217,7 +217,7 @@ const sendContentPacks = (categoryName,event) => {
             connection.release();
         });
         });
-    }else if (categoryName == "Music") {
+    }else if (categoryName == "Leave") {
       if (categoryName == "Music"){
         var senderID = event.sender.id;
         var messageData = {
@@ -225,30 +225,42 @@ const sendContentPacks = (categoryName,event) => {
                 "id": senderID
             },
             "message":{
-                "text":"Here is some cool and interesting stuff on music.\n\nWhy not check them??",
+                "text":"Do you want to apply for a leave…",
                 "quick_replies":[
                   {
                     "content_type":"text",
-                    "title":"Quizzes",
-                    "payload":"Quizzes"
+                    "title":"Apply",
+                    "payload":"Apply"
                   },
                   {
                     "content_type":"text",
-                    "title":"Classical Music",
-                    "payload":"Music"
+                    "title":"Leave Balance",
+                    "payload":"Leave Balance"
                   },
                   {
                     "content_type":"text",
-                    "title":"Western Music",
-                    "payload":"Music"
-                  },
-                  {
-                    "content_type":"text",
-                    "title":"Categories",
-                    "payload":"Categories"
+                    "title":"Holidays",
+                    "payload":"Holidays"
                   }
-
                 ]
+              }
+        }
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+        }else {
+            console.log("No Data Found From Database");
+            sendHelpMessage(event);
+        }
+    }else if (categoryName == "Apply") {
+      if (categoryName == "Music"){
+        var senderID = event.sender.id;
+        var messageData = {
+            "recipient": {
+                "id": senderID
+            },
+            "message":{
+                "text":"Let me know your employee ID…",
+                "quick_replies":quickreply
               }
         }
       //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
@@ -490,7 +502,8 @@ function sendHelpMessage(event){
         console.log("--------:Response data:-------- timezone", userprofiledata.timezone);
         console.log("--------:Response data:--------gender ", userprofiledata.gender);
         var senderID = event.sender.id;
-        var msg = 'Hey '+username+', How are you?\n \nDid you check these amazingly cool stuff on Fankick?';
+        var msg = 'Hi '+username+'!, What brings you here…';
+
         //var msg = 'Hey '+username+', How are you?';
         console.log("--------:Response data:--------sendHelpMessage1", msg);
         var messageData = {
@@ -556,7 +569,7 @@ function fbuserdetails(event, userid) {
         var senderID = event.sender.id;
         //var msg = 'Hi '+username+', A lot of exciting things are awaiting for you! Get kicking!';
         //var msg = 'Hi '+username+'! My name is Kicker.\n How may I come of any help to you today?';
-    var msg = 'Hi '+username+'! My name is Kicker.\n \nI can help you get closer to your favorite celebrity with a lot of exciting things about them.\n\n Choose what excites you more';
+        var msg = 'Hi '+username+'!\n \nI am Eva, your personal HR assistant…\n \nHow may I help you…';
   //var msg = 'Hi '+username+'! My name is Kicker.';
         console.log("--------:Response data:--------msg1 ", msg);
         var messageData = {

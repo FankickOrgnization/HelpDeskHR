@@ -609,7 +609,7 @@ function sendHelpMessage(event){
         console.log("--------:Response data:-------- timezone", userprofiledata.timezone);
         console.log("--------:Response data:--------gender ", userprofiledata.gender);
         var senderID = event.sender.id;
-        var msg = 'Hey '+username+', How are you?\n \nDid you check these amazingly cool stuff on Fankick?';
+        var msg = 'Hi '+username+'!, What brings you here…';
         //var msg = 'Hey '+username+', How are you?';
         console.log("--------:Response data:--------sendHelpMessage1", msg);
         var messageData = {
@@ -623,28 +623,18 @@ function sendHelpMessage(event){
                 "quick_replies":[
                   {
                     "content_type":"text",
-                    "title":"Categories",
-                    "payload":"Categories"
+                    "title":"Leave",
+                    "payload":"Leave"
                   },
                   {
                     "content_type":"text",
-                    "title":"Movies",
-                    "payload":"Movies"
+                    "title":"Pay slip",
+                    "payload":"Pay slip"
                   },
                   {
                     "content_type":"text",
-                    "title":"Sports",
-                    "payload":"Sports"
-                  },
-                  {
-                    "content_type":"text",
-                    "title":"Music",
-                    "payload":"Music"
-                  },
-                  {
-                    "content_type":"text",
-                    "title":"Celebrities",
-                    "payload":"Celebrities"
+                    "title":"Other",
+                    "payload":"Other"
                   }
                 ]
               }
