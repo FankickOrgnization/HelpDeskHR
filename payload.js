@@ -502,7 +502,7 @@ function sendHelpMessage(event){
         console.log("--------:Response data:-------- timezone", userprofiledata.timezone);
         console.log("--------:Response data:--------gender ", userprofiledata.gender);
         var senderID = event.sender.id;
-        var msg = 'Hi '+username+'!, What brings you here…';
+        var msg = 'Hi '+username+'!,\n \nWhat brings you here…';
 
         //var msg = 'Hey '+username+', How are you?';
         console.log("--------:Response data:--------sendHelpMessage1", msg);
@@ -578,30 +578,7 @@ function fbuserdetails(event, userid) {
             },
             "message":{
                 "text":msg,
-                "quick_replies":[
-                  {
-                    "content_type":"text",
-                    "title":"Categories",
-                    "payload":"Categories"
-                  },
-                  {
-                    "content_type":"text",
-                    "title":"Fan Clubs",
-                    "payload":"Fan Clubs"
-                  },
-                  {
-                    "content_type":"text",
-                    "title":"Fan Magazine",
-                    "payload":"Fan Magazine"
-                  }
-                  // ,
-                  // {
-                  //   "content_type":"text",
-                  //   "title":"What can you do?",
-                  //   "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
-                  // }
-                ]
-
+                "quick_replies":quickreply
               }
             }
          //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
