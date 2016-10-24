@@ -36,7 +36,7 @@ const payloadText = require('./payload.js');
 // ];
 
 app.use(bodyParser.json());
-var fbpage_access_token = 'EAAP946SZAFSABAA2DblwHSI8NEGhveWSCM8JZAkEwbg6u2ZAZBpQZCXZBrp6vdbMEEiU6J7GM0iNSZBKbG4mPkugibMs8OnKCZAtgZBgjfTUDRZC52OnseyQ0P2lSH1v9cruCAlSW5c7QHmNr5ov06D4csZBQTacLd3fzelkee2QEZAEtwZDZD';
+var fbpage_access_token = 'EAAP946SZAFSABAOdfz6BR3ReQ3L7eBRlZCdUOTLgPsEzDk8JChwSPdFZAaliRqbBeA4PubeQ6mwBCcV7xLOhydsZBKtCxrZAsyZCvb2QogaUZCLAvWDujqGllYAh4eW1sUZAsqLo2lEb29jtgdURZAeZCIarXGTLo46xJau48BOZC94rgZDZD';
 var quickMenu = payloadText.quickMenu;
 
 app.get('/webhook', function(req, res) {
