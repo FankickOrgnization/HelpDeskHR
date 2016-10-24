@@ -218,7 +218,7 @@ const sendContentPacks = (categoryName,event) => {
         });
         });
     }else if (categoryName == "Leave") {
-      if (categoryName == "Music"){
+      if (categoryName == "Leave"){
         var senderID = event.sender.id;
         var messageData = {
             "recipient": {
@@ -252,7 +252,7 @@ const sendContentPacks = (categoryName,event) => {
             sendHelpMessage(event);
         }
     }else if (categoryName == "Apply") {
-      if (categoryName == "Music"){
+      if (categoryName == "Apply"){
         var senderID = event.sender.id;
         var messageData = {
             "recipient": {
