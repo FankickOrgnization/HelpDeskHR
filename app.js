@@ -405,7 +405,7 @@ function sendHelpMessage(event){
                     "title":"Exit Policies",
                     "payload":"Exit Policies"
                   }
-                ];
+                ]
               }
             }
         // callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
