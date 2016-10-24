@@ -1,6 +1,6 @@
 'use strict';
 var request = require('request');
-const searchText = require('./search.js');
+//const searchText = require('./search.js');
 const thread = require('./thread.js');
 //var app = express();
 var mysql = require('mysql');
