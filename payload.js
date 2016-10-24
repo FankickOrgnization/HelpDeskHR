@@ -470,17 +470,17 @@ const sendContentPacks = (categoryName,event) => {
                   {
                     "content_type":"text",
                     "title":"Health Insurance",
-                    "payload":"Health Insurance Policy"
+                    "payload":"Health Insurance"
                   },
                   {
                     "content_type":"text",
                     "title":"Family Insurance",
-                    "payload":"Family Insurance Policy"
+                    "payload":"Family Insurance"
                   },
                   {
                     "content_type":"text",
                     "title":"Accidental Insurance",
-                    "payload":"Accidental Insurance Policy"
+                    "payload":"Accidental Insurance"
                   }
                 ]
               }
