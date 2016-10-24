@@ -623,18 +623,43 @@ function sendHelpMessage(event){
                 "quick_replies":[
                   {
                     "content_type":"text",
-                    "title":"Leave",
-                    "payload":"Leave"
+                    "title":"Code of Conduct",
+                    "payload":"Code of Conduct"
                   },
                   {
                     "content_type":"text",
-                    "title":"Pay slip",
-                    "payload":"Pay slip"
+                    "title":"Holiday List",
+                    "payload":"Holiday List"
                   },
                   {
                     "content_type":"text",
-                    "title":"Other",
-                    "payload":"Other"
+                    "title":"Payroll",
+                    "payload":"Payroll"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Leave Policy",
+                    "payload":"Leave Policy"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"L&D Center",
+                    "payload":"L&D Center"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Hiring",
+                    "payload":"Hiring"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Health Insurance",
+                    "payload":"Health Insurance"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Exit Policy",
+                    "payload":"Exit Policy"
                   }
                 ]
               }

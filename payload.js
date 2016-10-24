@@ -15,18 +15,43 @@ var fbpage_access_token = 'EAAP946SZAFSABAOdfz6BR3ReQ3L7eBRlZCdUOTLgPsEzDk8JChwS
 var quickreply = [
   {
     "content_type":"text",
-    "title":"Leave",
-    "payload":"Leave"
+    "title":"Code of Conduct",
+    "payload":"Code of Conduct"
   },
   {
     "content_type":"text",
-    "title":"Pay slip",
-    "payload":"Pay slip"
+    "title":"Holiday List",
+    "payload":"Holiday List"
   },
   {
     "content_type":"text",
-    "title":"Other",
-    "payload":"Other"
+    "title":"Payroll",
+    "payload":"Payroll"
+  },
+  {
+    "content_type":"text",
+    "title":"Leave Policy",
+    "payload":"Leave Policy"
+  },
+  {
+    "content_type":"text",
+    "title":"L&D Center",
+    "payload":"L&D Center"
+  },
+  {
+    "content_type":"text",
+    "title":"Hiring",
+    "payload":"Hiring"
+  },
+  {
+    "content_type":"text",
+    "title":"Health Insurance",
+    "payload":"Health Insurance"
+  },
+  {
+    "content_type":"text",
+    "title":"Exit Policy",
+    "payload":"Exit Policy"
   }
 ];
 var moviesObj =  [
@@ -270,83 +295,87 @@ const sendContentPacks = (categoryName,event) => {
             sendHelpMessage(event);
         }
     }else {
-      pool.getConnection(function(err, connection) {
-        connection.query('SELECT * FROM fk_content_pack where category_id = (SELECT id FROM fk_category where name = ?)', [categoryName], function(err, rows) {
-            if (err) {
-                console.log("Error While retriving content pack data from database:", err);
-            } else if (rows.length) {
-                var senderID = event.sender.id;
-                var contentList = [];
-                var datalength = rows.length;
-                if(datalength > 10){
-                for (var i = 0; i < 10; i++) { //Construct request body
-                    var keyMap = {
-                        "title": rows[i].name,
-                        "image_url": rows[i].image_url,
-                        //"item_url": rows[i].image_url,
-                        "subtitle": categoryName,
-                        "buttons": [{
-                            "type": "postback",
-                            "title": "View",
-                            "payload": rows[i].id
-                        }
-                      //   // , {
-                      //   //     "type": "postback",
-                      //   //     "title": "Magazine",
-                      //   //     "payload": "USER_DEFINED_PAYLOAD"
-                      //   // }
-                      ]
-                    };
-                    contentList.push(keyMap);
+      if(){
+      }else {
+        pool.getConnection(function(err, connection) {
+          connection.query('SELECT * FROM fk_content_pack where category_id = (SELECT id FROM fk_category where name = ?)', [categoryName], function(err, rows) {
+              if (err) {
+                  console.log("Error While retriving content pack data from database:", err);
+              } else if (rows.length) {
+                  var senderID = event.sender.id;
+                  var contentList = [];
+                  var datalength = rows.length;
+                  if(datalength > 10){
+                  for (var i = 0; i < 10; i++) { //Construct request body
+                      var keyMap = {
+                          "title": rows[i].name,
+                          "image_url": rows[i].image_url,
+                          //"item_url": rows[i].image_url,
+                          "subtitle": categoryName,
+                          "buttons": [{
+                              "type": "postback",
+                              "title": "View",
+                              "payload": rows[i].id
+                          }
+                        //   // , {
+                        //   //     "type": "postback",
+                        //   //     "title": "Magazine",
+                        //   //     "payload": "USER_DEFINED_PAYLOAD"
+                        //   // }
+                        ]
+                      };
+                      contentList.push(keyMap);
+                  }
+                }else{
+                  for (var i = 0; i < datalength; i++) { //Construct request body
+                      var keyMap = {
+                          "title": rows[i].name,
+                          "image_url": rows[i].image_url,
+                          //"item_url": rows[i].image_url,
+                          "subtitle": categoryName,
+                          "buttons": [{
+                              "type": "postback",
+                              "title": "View",
+                              "payload": rows[i].id
+                          }
+                        //   // , {
+                        //   //     "type": "postback",
+                        //   //     "title": "Magazine",
+                        //   //     "payload": "USER_DEFINED_PAYLOAD"
+                        //   // }
+                        ]
+                      };
+                      contentList.push(keyMap);
+                  }
                 }
-              }else{
-                for (var i = 0; i < datalength; i++) { //Construct request body
-                    var keyMap = {
-                        "title": rows[i].name,
-                        "image_url": rows[i].image_url,
-                        //"item_url": rows[i].image_url,
-                        "subtitle": categoryName,
-                        "buttons": [{
-                            "type": "postback",
-                            "title": "View",
-                            "payload": rows[i].id
-                        }
-                      //   // , {
-                      //   //     "type": "postback",
-                      //   //     "title": "Magazine",
-                      //   //     "payload": "USER_DEFINED_PAYLOAD"
-                      //   // }
-                      ]
-                    };
-                    contentList.push(keyMap);
-                }
+                  var messageData = {
+                      "recipient": {
+                          "id": senderID
+                      },
+                      "message": {
+                          "attachment": {
+                              "type": "template",
+                              "payload": {
+                                  "template_type": "generic",
+                                  "elements": contentList
+                              }
+                          },
+                          "quick_replies":quickMenu
+                      }
+                  }
+                  //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+                  callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+                  //https://graph.facebook.com/v2.6/me/messages?
+              } else {
+                  console.log("No Data Found From Database");
+                  sendHelpMessage(event);
+                  //sendImageMessage(event);
               }
-                var messageData = {
-                    "recipient": {
-                        "id": senderID
-                    },
-                    "message": {
-                        "attachment": {
-                            "type": "template",
-                            "payload": {
-                                "template_type": "generic",
-                                "elements": contentList
-                            }
-                        },
-                        "quick_replies":quickMenu
-                    }
-                }
-                //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
-                callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
-                //https://graph.facebook.com/v2.6/me/messages?
-            } else {
-                console.log("No Data Found From Database");
-                sendHelpMessage(event);
-                //sendImageMessage(event);
-            }
-            connection.release();
-        });
-        });
+              connection.release();
+          });
+          });
+
+      }
     }
 }
 function quizzes(event){
