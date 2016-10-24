@@ -376,7 +376,7 @@ const sendContentPacks = (categoryName,event) => {
                 "id": senderID
             },
             "message":{
-                "text":"L&D Center",
+                "text":"What do you want to know about Code of Conduct",
                 "quick_replies":quickreply
                 // [
                 //   {
