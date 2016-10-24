@@ -491,8 +491,8 @@ const sendContentPacks = (categoryName,event) => {
             console.log("No Data Found From Database");
             sendHelpMessage(event);
         }
-    }else if (categoryName == "Health Insurance Policy") {
-      if (categoryName == "Health Insurance Policy"){
+    }else if (categoryName == "Health Insurance") {
+      if (categoryName == "Health Insurance"){
         var senderID = event.sender.id;
         var messageData = {
             "recipient": {
