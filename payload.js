@@ -11,7 +11,7 @@ var pool = mysql.createPool({
     password: '3e384329',
     database: 'rankworlddev'
 });
-var fbpage_access_token = 'EAAXcJew5yNkBAAvFD3wX3RZACdvA4lZB6XStBzliKI9y4m7I1taAnWUWBezVarL8FjteZCztMBjXZCs35lAweqmc2XZARIf378LZA5lTg5xIebmBmFL4MmJGU4JrowfdkkKDbjqwuzBkCWPxQjgddrW4EZBnv6LiccAHdqoLUNcsgZDZD';
+var fbpage_access_token = 'EAAP946SZAFSABAOdfz6BR3ReQ3L7eBRlZCdUOTLgPsEzDk8JChwSPdFZAaliRqbBeA4PubeQ6mwBCcV7xLOhydsZBKtCxrZAsyZCvb2QogaUZCLAvWDujqGllYAh4eW1sUZAsqLo2lEb29jtgdURZAeZCIarXGTLo46xJau48BOZC94rgZDZD';
 var quickreply = [
     {
       "content_type":"text",
