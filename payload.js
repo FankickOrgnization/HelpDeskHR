@@ -107,7 +107,8 @@ const sendContentPacks = (categoryName,event) => {
             }
         }
       }
-        callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+        //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
     } else if (categoryName == "Get Started") {
         //greetingtext(messagingEvent,Get Started);
         var senderID = event.sender.id;
@@ -158,7 +159,8 @@ const sendContentPacks = (categoryName,event) => {
                           "quick_replies": quickMenu
                     }
                 }
-                callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+                //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+                  callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
             } else {
                 console.log("No Data Found From Database");
                 sendHelpMessage(event);
@@ -206,7 +208,8 @@ const sendContentPacks = (categoryName,event) => {
                         "quick_replies": quickMenu
                     }
                 }
-                callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+                //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+                  callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
             } else {
                 console.log("No Data Found From Database");
                 sendHelpMessage(event);
@@ -377,7 +380,8 @@ const sendContentPacks = (categoryName,event) => {
                 ]
               }
         }
-        callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
         }else {
             console.log("No Data Found From Database");
             sendHelpMessage(event);
@@ -493,7 +497,9 @@ const sendContentPacks = (categoryName,event) => {
                         "quick_replies":quickMenu
                     }
                 }
-                callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+                //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+                callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+                //https://graph.facebook.com/v2.6/me/messages?
             } else {
                 console.log("No Data Found From Database");
                 sendHelpMessage(event);
@@ -573,7 +579,8 @@ function quizzes(event){
                   ]
                 }
           }
-          callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+            callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
       } else {
           console.log("No Data Found From Database");
           sendHelpMessage(event);
@@ -626,7 +633,8 @@ function celebritiesdetails(categoryName,event){
                     "quick_replies":quickMenu
                 }
             }
-            callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+            //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+              callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
         } else {
             console.log("No Data Found From Database");
             sendHelpMessage(event);
@@ -668,7 +676,8 @@ function sendHelpMessage(event){
                 "quick_replies":quickreply
               }
             }
-         callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+        // callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+           callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
          //sendHelpMessageSecond(event, userid);
          if (!error && response.statusCode == 200) {
              var recipientId = body.recipient_id;
@@ -696,7 +705,8 @@ function sendHelpMessageSecond(event, userid) {
                 "quick_replies":quickreply
               }
             }
-         callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+        // callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+           callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
 }
 
 // const fbuserdetails = (event,userid) =>{
@@ -754,7 +764,8 @@ function fbuserdetails(event, userid) {
 
               }
             }
-         callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+         //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+           callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
          //fbuserdetailsSecond(event, userid);
 
         if (!error && response.statusCode == 200) {
@@ -785,7 +796,7 @@ function callSendAPI(body, url) {
             "Content-Type": "application/json"
         }
     }, function(error, response, body) {
-        console.log("Response data: ", JSON.stringify(body));
+        console.log("Response data:-- ", JSON.stringify(body));
         if (!error && response.statusCode == 200) {
             var recipientId = body.recipient_id;
             var messageId = body.message_id;

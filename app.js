@@ -259,7 +259,8 @@ pool.getConnection(function(err, connection) {
                       "quick_replies": quickMenu
                 }
             }
-            callSendAPI(messageData, 'https://graph.facebook.com/v2.6/592208327626213/messages');
+            //callSendAPI(messageData, 'https://graph.facebook.com/v2.6/592208327626213/messages');
+              callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
         }
         connection.release();
     });
@@ -299,7 +300,8 @@ function mainPacks(categoryName, event){
           ]
         }
   }
-  callSendAPI(messageData, 'https://graph.facebook.com/v2.6/592208327626213/messages');
+  //callSendAPI(messageData, 'https://graph.facebook.com/v2.6/592208327626213/messages');
+    callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
 }
 
 // Quick_reply payload section Start ********************************************
@@ -373,7 +375,8 @@ function quizzesPacks(categoryName, event) {
           ]
         }
   }
-  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+  //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+    callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
 }
 // QuizzesPacks payload section End ********************************************
 // QuestionsPacks payload section Start ********************************************
@@ -445,7 +448,8 @@ function questionsPacks(categoryName, event) {
                   ]
                 }
           }
-          callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+            callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
       } else {
           console.log("No Data Found From Database");
           sendHelpMessage(event);
@@ -530,7 +534,8 @@ function fbuserdetails(event, userid) {
 
               }
             }
-         callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+         //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+           callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
          //fbuserdetailsSecond(event, userid);
 
         if (!error && response.statusCode == 200) {
@@ -581,7 +586,8 @@ function fbuserdetailsSecond(event, userid) {
                 ]
               }
             }
-         callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+         //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+           callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
 }
 
 
@@ -643,7 +649,8 @@ function sendHelpMessage(event){
                 ]
               }
             }
-         callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+        // callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+           callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
          //sendHelpMessageSecond(event, userid);
          if (!error && response.statusCode == 200) {
              var recipientId = body.recipient_id;
@@ -698,7 +705,8 @@ function sendHelpMessageSecond(event, userid) {
                 ]
               }
             }
-         callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+         //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+           callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
 }
 
 function callSendAPI(body, url) {
@@ -715,7 +723,7 @@ function callSendAPI(body, url) {
             "Content-Type": "application/json"
         }
     }, function(error, response, body) {
-        console.log("Response data: ", JSON.stringify(body));
+        console.log("Response data:-- ", JSON.stringify(body));
         if (!error && response.statusCode == 200) {
             var recipientId = body.recipient_id;
             var messageId = body.message_id;
