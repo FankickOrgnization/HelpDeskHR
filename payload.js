@@ -242,8 +242,246 @@ const sendContentPacks = (categoryName,event) => {
             connection.release();
         });
         });
-    }else if (categoryName == "Leave") {
-      if (categoryName == "Leave"){
+    }else if (categoryName == "Code of Conduct") {
+      if (categoryName == "Code of Conduct"){
+        var senderID = event.sender.id;
+        var messageData = {
+            "recipient": {
+                "id": senderID
+            },
+            "message":{
+                "text":"Do you want to apply for a leave…",
+                "quick_replies":[
+                  {
+                    "content_type":"text",
+                    "title":"Apply",
+                    "payload":"Apply"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Leave Balance",
+                    "payload":"Leave Balance"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Holidays",
+                    "payload":"Holidays"
+                  }
+                ]
+              }
+        }
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+        }else {
+            console.log("No Data Found From Database");
+            sendHelpMessage(event);
+        }
+    }else if (categoryName == "Holiday List") {
+      if (categoryName == "Holiday List"){
+        var senderID = event.sender.id;
+        var messageData = {
+            "recipient": {
+                "id": senderID
+            },
+            "message":{
+                "text":"Do you want to apply for a leave…",
+                "quick_replies":[
+                  {
+                    "content_type":"text",
+                    "title":"Apply",
+                    "payload":"Apply"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Leave Balance",
+                    "payload":"Leave Balance"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Holidays",
+                    "payload":"Holidays"
+                  }
+                ]
+              }
+        }
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+        }else {
+            console.log("No Data Found From Database");
+            sendHelpMessage(event);
+        }
+    }else if (categoryName == "Payroll") {
+      if (categoryName == "Payroll"){
+        var senderID = event.sender.id;
+        var messageData = {
+            "recipient": {
+                "id": senderID
+            },
+            "message":{
+                "text":"Do you want to apply for a leave…",
+                "quick_replies":[
+                  {
+                    "content_type":"text",
+                    "title":"Apply",
+                    "payload":"Apply"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Leave Balance",
+                    "payload":"Leave Balance"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Holidays",
+                    "payload":"Holidays"
+                  }
+                ]
+              }
+        }
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+        }else {
+            console.log("No Data Found From Database");
+            sendHelpMessage(event);
+        }
+    }else if (categoryName == "Leave Policy") {
+      if (categoryName == "Leave Policy"){
+        var senderID = event.sender.id;
+        var messageData = {
+            "recipient": {
+                "id": senderID
+            },
+            "message":{
+                "text":"Do you want to apply for a leave…",
+                "quick_replies":[
+                  {
+                    "content_type":"text",
+                    "title":"Apply",
+                    "payload":"Apply"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Leave Balance",
+                    "payload":"Leave Balance"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Holidays",
+                    "payload":"Holidays"
+                  }
+                ]
+              }
+        }
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+        }else {
+            console.log("No Data Found From Database");
+            sendHelpMessage(event);
+        }
+    }else if (categoryName == "L&D Center") {
+      if (categoryName == "L&D Center"){
+        var senderID = event.sender.id;
+        var messageData = {
+            "recipient": {
+                "id": senderID
+            },
+            "message":{
+                "text":"Do you want to apply for a leave…",
+                "quick_replies":[
+                  {
+                    "content_type":"text",
+                    "title":"Apply",
+                    "payload":"Apply"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Leave Balance",
+                    "payload":"Leave Balance"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Holidays",
+                    "payload":"Holidays"
+                  }
+                ]
+              }
+        }
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+        }else {
+            console.log("No Data Found From Database");
+            sendHelpMessage(event);
+        }
+    }else if (categoryName == "Hiring") {
+      if (categoryName == "Hiring"){
+        var senderID = event.sender.id;
+        var messageData = {
+            "recipient": {
+                "id": senderID
+            },
+            "message":{
+                "text":"Do you want to apply for a leave…",
+                "quick_replies":[
+                  {
+                    "content_type":"text",
+                    "title":"Apply",
+                    "payload":"Apply"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Leave Balance",
+                    "payload":"Leave Balance"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Holidays",
+                    "payload":"Holidays"
+                  }
+                ]
+              }
+        }
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+        }else {
+            console.log("No Data Found From Database");
+            sendHelpMessage(event);
+        }
+    }else if (categoryName == "Health Insurance") {
+      if (categoryName == "Health Insurance"){
+        var senderID = event.sender.id;
+        var messageData = {
+            "recipient": {
+                "id": senderID
+            },
+            "message":{
+                "text":"Do you want to apply for a leave…",
+                "quick_replies":[
+                  {
+                    "content_type":"text",
+                    "title":"Apply",
+                    "payload":"Apply"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Leave Balance",
+                    "payload":"Leave Balance"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Holidays",
+                    "payload":"Holidays"
+                  }
+                ]
+              }
+        }
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+        }else {
+            console.log("No Data Found From Database");
+            sendHelpMessage(event);
+        }
+    }else if (categoryName == "Exit Policy") {
+      if (categoryName == "Exit Policy"){
         var senderID = event.sender.id;
         var messageData = {
             "recipient": {
@@ -374,7 +612,7 @@ const sendContentPacks = (categoryName,event) => {
           });
           });
 
-      
+
     }
 }
 function quizzes(event){
