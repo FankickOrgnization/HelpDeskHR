@@ -807,21 +807,7 @@ function sendHelpMessage(event){
     });
 }
 
-function sendHelpMessageSecond(event, userid) {
-    var senderID = event.sender.id;
-        var msg = 'Did you check these amazingly cool stuff on Fankick?';
-        var messageData = {
-            "recipient": {
-                "id": senderID
-            },
-            "message":{
-                "text":msg,
-                "quick_replies":quickreply
-              }
-            }
-        // callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
-           callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
-}
+
 
 // const fbuserdetails = (event,userid) =>{
 function fbuserdetails(event, userid) {
