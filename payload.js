@@ -457,6 +457,111 @@ const sendContentPacks = (categoryName,event) => {
             console.log("No Data Found From Database");
             sendHelpMessage(event);
         }
+    }else if (categoryName == "Insurance") {
+      if (categoryName == "Insurance"){
+        var senderID = event.sender.id;
+        var messageData = {
+            "recipient": {
+                "id": senderID
+            },
+            "message":{
+                "text":"You are eligible for free health insurance policy…\n\nYou can download and refer your insurance policies from here….\n\nSelect the policy you want to refer…",
+                "quick_replies":[
+                  {
+                    "content_type":"text",
+                    "title":"Health Insurance",
+                    "payload":"Health Insurance Policy"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Family Insurance",
+                    "payload":"Family Insurance Policy"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Accidental Insurance",
+                    "payload":"Accidental Insurance Policy"
+                  }
+                ]
+              }
+        }
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+        }else {
+            console.log("No Data Found From Database");
+            sendHelpMessage(event);
+        }
+    }else if (categoryName == "Health Insurance Policy") {
+      if (categoryName == "Health Insurance Policy"){
+        var senderID = event.sender.id;
+        var messageData = {
+            "recipient": {
+                "id": senderID
+            },
+            "message":{
+                "text":"Download your policy…\n\n HealthInsurancePolicy.pdf",
+                "quick_replies":[
+                  {
+                    "content_type":"text",
+                    "title":"That’s it",
+                    "payload":"That’s it"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Have some other query",
+                    "payload":"Have some other query"
+                  }
+                ]
+              }
+        }
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+        }else {
+            console.log("No Data Found From Database");
+            sendHelpMessage(event);
+        }
+    }else if (categoryName == "That’s it") {
+      if (categoryName == "That’s it"){
+        var senderID = event.sender.id;
+        var messageData = {
+            "recipient": {
+                "id": senderID
+            },
+            "message":{
+                "text":"I am always willing to answer you, have a nice",
+                "quick_replies":[
+                  {
+                    "content_type":"text",
+                    "title":"Bye!",
+                    "payload":"Bye!"
+                  }
+                ]
+              }
+        }
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+        }else {
+            console.log("No Data Found From Database");
+            sendHelpMessage(event);
+        }
+    }else if (categoryName == "Bye!") {
+      if (categoryName == "Bye!"){
+        var senderID = event.sender.id;
+        var messageData = {
+            "recipient": {
+                "id": senderID
+            },
+            "message":{
+                "text":"Bye!",
+                "quick_replies":quickreply
+              }
+        }
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+        }else {
+            console.log("No Data Found From Database");
+            sendHelpMessage(event);
+        }
     }else {
 
         pool.getConnection(function(err, connection) {
