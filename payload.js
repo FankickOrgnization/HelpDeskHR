@@ -508,8 +508,8 @@ const sendContentPacks = (categoryName,event) => {
                   },
                   {
                     "content_type":"text",
-                    "title":"Have some other query",
-                    "payload":"Have some other query"
+                    "title":"Have other query",
+                    "payload":"Have other query"
                   }
                 ]
               }
