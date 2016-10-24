@@ -765,7 +765,6 @@ function sendHelpMessage(event){
     request({
         "uri": url,
         "method": 'GET'
-
     }, function(error, response, body) {
         var userprofiledata = JSON.parse(response.body);
         var username = userprofiledata.first_name;
@@ -777,7 +776,6 @@ function sendHelpMessage(event){
         console.log("--------:Response data:--------gender ", userprofiledata.gender);
         var senderID = event.sender.id;
         var msg = 'Hi '+username+'!,\n \nWhat brings you here…';
-
         //var msg = 'Hey '+username+', How are you?';
         console.log("--------:Response data:--------sendHelpMessage1", msg);
         var messageData = {
@@ -798,7 +796,6 @@ function sendHelpMessage(event){
              var messageId = body.message_id;
              console.log("Successfully sent generic message with id %s to recipient %s", messageId, recipientId);
              //searchText.sendHelpMessageSecond(event, userid);
-
          } else {
              console.error("Unable to send message.");
              //console.error(response);
@@ -806,8 +803,6 @@ function sendHelpMessage(event){
          }
     });
 }
-
-
 
 // const fbuserdetails = (event,userid) =>{
 function fbuserdetails(event, userid) {
