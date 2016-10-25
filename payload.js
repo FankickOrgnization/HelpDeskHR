@@ -35,8 +35,8 @@ var quickreply = [
   },
   {
     "content_type":"text",
-    "title":"Exit Policy",
-    "payload":"Exit Policy"
+    "title":"Exit Policies",
+    "payload":"Exit Policies"
   }
 ];
 var moviesObj =  [
