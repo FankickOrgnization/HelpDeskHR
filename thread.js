@@ -16,13 +16,14 @@ const persistentMenu = (accessToken) => {
                 {
                   "type":"postback",
                   "title":"Choose Categories",
-                  "payload":"Hi"
-                },
-                {
-                  "type":"web_url",
-                  "title":"Download HR-HelpDesk App",
-                  "url":"http://google.com/"
+                  "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_HELP"
                 }
+                // ,
+                // {
+                //   "type":"web_url",
+                //   "title":"Download HR-HelpDesk App",
+                //   "url":"http://google.com/"
+                // }
               ]
             };
   request({
