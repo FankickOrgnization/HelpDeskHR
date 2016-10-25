@@ -493,6 +493,7 @@ const sendContentPacks = (categoryName,event) => {
             sendHelpMessage(event);
         }
     }else if (categoryName == "Health Insurance") {
+      var hiurl = "http://HealthInsurancePolicy.pdf";
       if (categoryName == "Health Insurance"){
         var senderID = event.sender.id;
         var messageData = {
@@ -500,7 +501,7 @@ const sendContentPacks = (categoryName,event) => {
                 "id": senderID
             },
             "message":{
-                "text":"Download your policy…\n\nHealthInsurancePolicy.pdf",
+                "text":'Download your policy…\n\n'+hiurl+'',
                 "quick_replies":[
                   {
                     "content_type":"text",
@@ -565,6 +566,7 @@ const sendContentPacks = (categoryName,event) => {
         }
     }else{
            var empid = categoryName.substr(0,2);
+           var epurl ="http://Exitpolicies.pdf"
            if(empid == "GI" || empid == "gi"){
              var senderID = event.sender.id;
              var messageData = {
@@ -572,7 +574,7 @@ const sendContentPacks = (categoryName,event) => {
                      "id": senderID
                  },
                  "message":{
-                     "text":"Your notice period is 2 months…\n\nDownload the policy for more information…\n\nExitpolicies.pdf \n\nAnything else you want to know…",
+                     "text":'Your notice period is 2 months…\n\nDownload the policy for more information…\n\n'+epurl+' \n\nAnything else you want to know…',
                      "quick_replies":[
                        {
                          "content_type":"text",
