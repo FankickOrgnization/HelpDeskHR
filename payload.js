@@ -529,7 +529,7 @@ const sendContentPacks = (categoryName,event) => {
                 "id": senderID
             },
             "message":{
-                "text":"I am always willing to answer you, have a nice",
+                "text":"I am always willing to answer you, have a nice day.",
                 "quick_replies":[
                   {
                     "content_type":"text",
@@ -720,7 +720,7 @@ function fbuserdetails(event, userid) {
         var senderID = event.sender.id;
         //var msg = 'Hi '+username+', A lot of exciting things are awaiting for you! Get kicking!';
         //var msg = 'Hi '+username+'! My name is Kicker.\n How may I come of any help to you today?';
-        var msg = 'Hi '+username+'!\n \nI am Acolyte, your personal HR assistant…\n \nHow may I help you…';
+        var msg = 'Hi '+username+'!\n \nI am Acolyte, your personal HR assistant…\n \nWhat Can I help you with?';
   //var msg = 'Hi '+username+'! My name is Kicker.';
         console.log("--------:Response data:--------msg1 ", msg);
         var messageData = {
