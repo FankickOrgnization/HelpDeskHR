@@ -566,7 +566,7 @@ const sendContentPacks = (categoryName,event) => {
         }
     }else{
            var empid = categoryName.substr(0,2);
-           var epurl ="http://Exitpolicies.pdf"
+           var epurl ="http://Exitpolicies.pdf";
            if(empid == "GI" || empid == "gi"){
              var senderID = event.sender.id;
              var messageData = {
