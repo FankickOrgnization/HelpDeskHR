@@ -80,46 +80,47 @@ var quickMenu = [
 
 const sendContentPacks = (categoryName,event) => {
   console.log("*************---categoryName----*******", categoryName );
-    if (categoryName == "Categories") {
-      console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",moviesObj);
-      if (moviesObj.length){
-        console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",moviesObj.length);
-        var senderID = event.sender.id;
-        var contentList = [];
-        for (var i = 0; i < moviesObj.length; i++) { //Construct request body
-            var keyMap = {
-                          "title": moviesObj[i].name,
-                          "image_url": moviesObj[i].imgurl,
-                                    //"item_url": moviesObj[i].imgurl,
-                          "buttons": [{
-                                      "type": "postback",
-                                      "title": moviesObj[i].name,
-                                      "payload": moviesObj[i].name
-                                    }]
-                                };
-
-            contentList.push(keyMap);
-        }
-        var messageData = {
-            "recipient": {
-                "id": senderID
-            },
-            "message": {
-                "attachment": {
-                    "type": "template",
-                    //"text":"We have some cool stuff waiting for you..",
-                    "payload": {
-                        "template_type": "generic",
-                        "elements": contentList
-                    }
-                },
-                //"quick_replies": quickMenu
-            }
-        }
-      }
-        //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
-          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
-    } else if (categoryName == "Get Started") {
+    // if (categoryName == "Categories") {
+    //   console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",moviesObj);
+    //   if (moviesObj.length){
+    //     console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",moviesObj.length);
+    //     var senderID = event.sender.id;
+    //     var contentList = [];
+    //     for (var i = 0; i < moviesObj.length; i++) { //Construct request body
+    //         var keyMap = {
+    //                       "title": moviesObj[i].name,
+    //                       "image_url": moviesObj[i].imgurl,
+    //                                 //"item_url": moviesObj[i].imgurl,
+    //                       "buttons": [{
+    //                                   "type": "postback",
+    //                                   "title": moviesObj[i].name,
+    //                                   "payload": moviesObj[i].name
+    //                                 }]
+    //                             };
+    //
+    //         contentList.push(keyMap);
+    //     }
+    //     var messageData = {
+    //         "recipient": {
+    //             "id": senderID
+    //         },
+    //         "message": {
+    //             "attachment": {
+    //                 "type": "template",
+    //                 //"text":"We have some cool stuff waiting for you..",
+    //                 "payload": {
+    //                     "template_type": "generic",
+    //                     "elements": contentList
+    //                 }
+    //             },
+    //             //"quick_replies": quickMenu
+    //         }
+    //     }
+    //   }
+    //     //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+    //       callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+    // } else
+    if (categoryName == "Get Started") {
         //greetingtext(messagingEvent,Get Started);
         var senderID = event.sender.id;
         thread.persistentMenu(fbpage_access_token);
