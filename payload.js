@@ -671,7 +671,8 @@ function sendHelpMessage(event){
         console.log("--------:Response data:-------- timezone", userprofiledata.timezone);
         console.log("--------:Response data:--------gender ", userprofiledata.gender);
         var senderID = event.sender.id;
-        var msg = 'Hi '+username+'!,\n \nMay I know your query…';
+        var msg = 'Hi '+username+'!,\n \nThanks for reaching us..Know us your query…';
+
         //var msg = 'Hey '+username+', How are you?';
         console.log("--------:Response data:--------sendHelpMessage1", msg);
         var messageData = {
