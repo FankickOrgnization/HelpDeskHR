@@ -16,7 +16,7 @@ const persistentMenu = (accessToken) => {
                 {
                   "type":"postback",
                   "title":"Choose Categories",
-                  "payload":"Categories"
+                  "payload":"Hi"
                 },
                 {
                   "type":"web_url",
