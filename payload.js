@@ -509,8 +509,8 @@ const sendContentPacks = (categoryName,event) => {
                   },
                   {
                     "content_type":"text",
-                    "title":"Have other query",
-                    "payload":"Have other query"
+                    "title":"Other query",
+                    "payload":"Other query"
                   }
                 ]
               }
