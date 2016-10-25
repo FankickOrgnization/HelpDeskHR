@@ -500,7 +500,7 @@ const sendContentPacks = (categoryName,event) => {
                 "id": senderID
             },
             "message":{
-                "text":"Download your policy…\n\n HealthInsurancePolicy.pdf",
+                "text":"Download your policy…\n\nHealthInsurancePolicy.pdf",
                 "quick_replies":[
                   {
                     "content_type":"text",
@@ -563,7 +563,7 @@ const sendContentPacks = (categoryName,event) => {
             console.log("No Data Found From Database");
             sendHelpMessage(event);
         }
-    }else {
+    }else{
            var empid = categoryName.substr(0,2);
            if(empid == "GI" || empid == "gi"){
              var senderID = event.sender.id;
@@ -595,7 +595,6 @@ const sendContentPacks = (categoryName,event) => {
                   sendHelpMessage(event);
                   //sendImageMessage(event);
               }
-
     }
 }
 
@@ -665,14 +664,13 @@ function sendHelpMessage(event){
         var userprofiledata = JSON.parse(response.body);
         var username = userprofiledata.first_name;
         //console.log("--------:Response data:-------- ", JSON.stringify(body));
-        console.log("--------:Response data:--------first_name ", userprofiledata.first_name);
-        console.log("--------:Response data:--------last_name ", userprofiledata.last_name);
-        console.log("--------:Response data:--------locale ", userprofiledata.locale);
-        console.log("--------:Response data:-------- timezone", userprofiledata.timezone);
-        console.log("--------:Response data:--------gender ", userprofiledata.gender);
+        // console.log("--------:Response data:--------first_name ", userprofiledata.first_name);
+        // console.log("--------:Response data:--------last_name ", userprofiledata.last_name);
+        // console.log("--------:Response data:--------locale ", userprofiledata.locale);
+        // console.log("--------:Response data:-------- timezone", userprofiledata.timezone);
+        // console.log("--------:Response data:--------gender ", userprofiledata.gender);
         var senderID = event.sender.id;
         var msg = 'Hi '+username+'!,\n \nThanks for reaching us..Know us your query…';
-
         //var msg = 'Hey '+username+', How are you?';
         console.log("--------:Response data:--------sendHelpMessage1", msg);
         var messageData = {
@@ -708,16 +706,15 @@ function fbuserdetails(event, userid) {
     request({
         "uri": url,
         "method": 'GET'
-
     }, function(error, response, body) {
         var userprofiledata = JSON.parse(response.body);
         var username = userprofiledata.first_name;
         //console.log("--------:Response data:-------- ", JSON.stringify(body));
-        console.log("--------:Response data:--------first_name ", userprofiledata.first_name);
-        console.log("--------:Response data:--------last_name ", userprofiledata.last_name);
-        console.log("--------:Response data:--------locale ", userprofiledata.locale);
-        console.log("--------:Response data:-------- timezone", userprofiledata.timezone);
-        console.log("--------:Response data:--------gender ", userprofiledata.gender);
+        // console.log("--------:Response data:--------first_name ", userprofiledata.first_name);
+        // console.log("--------:Response data:--------last_name ", userprofiledata.last_name);
+        // console.log("--------:Response data:--------locale ", userprofiledata.locale);
+        // console.log("--------:Response data:-------- timezone", userprofiledata.timezone);
+        // console.log("--------:Response data:--------gender ", userprofiledata.gender);
         var senderID = event.sender.id;
         //var msg = 'Hi '+username+', A lot of exciting things are awaiting for you! Get kicking!';
         //var msg = 'Hi '+username+'! My name is Kicker.\n How may I come of any help to you today?';
@@ -741,7 +738,6 @@ function fbuserdetails(event, userid) {
             var recipientId = body.recipient_id;
             var messageId = body.message_id;
             console.log("Successfully sent generic message with id %s to recipient %s", messageId, recipientId);
-
         } else {
             console.error("Unable to send message.");
             //console.error(response);
