@@ -565,7 +565,7 @@ const sendContentPacks = (categoryName,event) => {
         }
     }else {
            var empid = categoryName.substr(0,2);
-           if(empid == GI || empid == gi){
+           if(empid == "GI" || empid == "gi"){
              var senderID = event.sender.id;
              var messageData = {
                  "recipient": {
