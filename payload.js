@@ -241,25 +241,25 @@ const sendContentPacks = (categoryName,event) => {
                 "id": senderID
             },
             "message": {
-       "attachment": {
-         "type": "template",
-         "payload": {
-           "template_type": "generic",
-           "elements": [{
-             "title": "Welcome to HR-HelpDesk",
-             "image_url": "http://www.example.com/images/m-bank.png",
-             "buttons": [{
-               "type": "account_link",
-               "url": "https://www.example.com/authorize"
-             },
-             {
-               "type": "postback",
-               "title": "Skip",
-               "payload": "USER_DEFINED_PAYLOAD"
-             }]
-           }]
-         }
-       }
+               "attachment": {
+                 "type": "template",
+                 "payload": {
+                   "template_type": "generic",
+                   "elements": [{
+                     "title": "Welcome to HR-HelpDesk",
+                     "image_url": "http://www.example.com/images/m-bank.png",
+                     "buttons": [{
+                       "type": "account_link",
+                       "url": "https://www.example.com/authorize"
+                     },
+                     {
+                       "type": "postback",
+                       "title": "Skip",
+                       "payload": "USER_DEFINED_PAYLOAD"
+                     }]
+                   }]
+                 }
+               }
      }
         }
       //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
