@@ -251,6 +251,11 @@ const sendContentPacks = (categoryName,event) => {
              "buttons": [{
                "type": "account_link",
                "url": "https://www.example.com/authorize"
+             },
+             {
+               "type": "postback",
+               "title": "Skip",
+               "payload": "USER_DEFINED_PAYLOAD"
              }]
            }]
          }
