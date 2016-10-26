@@ -40,8 +40,8 @@ var quickreply = [
   },
   {
     "content_type":"text",
-    "title":"Login",
-    "payload":"Login"
+    "title":"Log In",
+    "payload":"Log In"
   }
 ];
 var moviesObj =  [
@@ -235,8 +235,8 @@ const sendContentPacks = (categoryName,event) => {
     //     });
     //   });
     // }
-    else if (categoryName == "Login") {
-      if (categoryName == "Login"){
+    else if (categoryName == "Log In") {
+      if (categoryName == "Log In"){
         var senderID = event.sender.id;
         var messageData = {
             "recipient": {
