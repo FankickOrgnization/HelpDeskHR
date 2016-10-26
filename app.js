@@ -404,6 +404,11 @@ function sendHelpMessage(event){
                     "content_type":"text",
                     "title":"Exit Policies",
                     "payload":"Exit Policies"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Login",
+                    "payload":"Login"
                   }
                 ]
               }
