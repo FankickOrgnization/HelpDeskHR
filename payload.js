@@ -292,7 +292,7 @@ const sendContentPacks = (categoryName,event) => {
                      }]
                    }]
                  }
-               }
+               },
                "quick_replies": quickreply
         }
         }
