@@ -37,6 +37,11 @@ var quickreply = [
     "content_type":"text",
     "title":"Exit Policies",
     "payload":"Exit Policies"
+  },
+  {
+    "content_type":"text",
+    "title":"Login",
+    "payload":"Login"
   }
 ];
 var moviesObj =  [
@@ -178,7 +183,7 @@ const sendContentPacks = (categoryName,event) => {
             }
             connection.release();
         });
-        });
+      });
     } else if (categoryName == "Fan Magazine") {
         //console.log("***************************", categoryName);
         pool.getConnection(function(err, connection) {
@@ -227,7 +232,37 @@ const sendContentPacks = (categoryName,event) => {
             }
             connection.release();
         });
-        });
+      });
+    }else if (categoryName == "Login") {
+      if (categoryName == "Login"){
+        var senderID = event.sender.id;
+        var messageData = {
+            "recipient": {
+                "id": senderID
+            },
+            "message": {
+       "attachment": {
+         "type": "template",
+         "payload": {
+           "template_type": "generic",
+           "elements": [{
+             "title": "Welcome to HR-HelpDesk",
+             "image_url": "http://www.example.com/images/m-bank.png",
+             "buttons": [{
+               "type": "account_link",
+               "url": "https://www.example.com/authorize"
+             }]
+           }]
+         }
+       }
+     }
+        }
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+        }else {
+            console.log("No Data Found From Database");
+            sendHelpMessage(event);
+        }
     }else if (categoryName == "Leave Policies") {
       if (categoryName == "Leave Policies"){
         var senderID = event.sender.id;
@@ -510,8 +545,8 @@ const sendContentPacks = (categoryName,event) => {
                   },
                   {
                     "content_type":"text",
-                    "title":"Other query",
-                    "payload":"Other query"
+                    "title":"Some other query",
+                    "payload":"Some other query"
                   }
                 ]
               }
@@ -583,8 +618,8 @@ const sendContentPacks = (categoryName,event) => {
                        },
                        {
                          "content_type":"text",
-                         "title":"Other query",
-                         "payload":"Other query"
+                         "title":"Some other query",
+                         "payload":"Some other query"
                        }
                      ]
                    }
