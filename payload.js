@@ -63,23 +63,23 @@ var moviesObj =  [
 }
 ];
 
-var quickMenu = [
-  {
-    "content_type":"text",
-    "title":"Categories",
-    "payload":"Categories"
-  },
-  {
-    "content_type":"text",
-    "title":"Fan Clubs",
-    "payload":"Fan Clubs"
-  },
-  {
-    "content_type":"text",
-    "title":"Fan Magazine",
-    "payload":"Fan Magazine"
-  }
-];
+// var quickMenu = [
+//   {
+//     "content_type":"text",
+//     "title":"Categories",
+//     "payload":"Categories"
+//   },
+//   {
+//     "content_type":"text",
+//     "title":"Fan Clubs",
+//     "payload":"Fan Clubs"
+//   },
+//   {
+//     "content_type":"text",
+//     "title":"Fan Magazine",
+//     "payload":"Fan Magazine"
+//   }
+// ];
 //app.use(bodyParser.json());
 //console.log("------:thread:-----");
 
@@ -133,107 +133,109 @@ const sendContentPacks = (categoryName,event) => {
         //sendTextMessage(userid, 'Get Started');
         console.log("categoryName", categoryName);
         //getStarted();
-    }else if (categoryName == "Fan Clubs") {
-      pool.getConnection(function(err, connection) {
-        connection.query('SELECT * FROM fk_pack_fanclub', function(err, rows) {
-            if (err) {
-                console.log("Error While retriving content pack data from database:", err);
-            } else if (rows.length) {
-                var senderID = event.sender.id;
-                var contentList = [];
-
-                for (var i = 0; i < rows.length; i++) { //Construct request body
-                    var keyMap = {
-                        "title": rows[i].name,
-                        "image_url": rows[i].img_url,
-                        //"item_url": rows[i].imageurl,
-                        // "buttons": [{
-                        //     "type": "web_url",
-                        //     "url": rows[i].name,
-                        //     "title": rows[i].name
-                        // }]
-                        "buttons": [{
-                            "type": "postback",
-                            "title": rows[i].name,
-                            "payload": rows[i].name
-                        }]
-                    };
-                    contentList.push(keyMap);
-                }
-                var messageData = {
-                    "recipient": {
-                        "id": senderID
-                    },
-                    "message": {
-                        "attachment": {
-                            "type": "template",
-                            "payload": {
-                                "template_type": "generic",
-                                "elements": contentList
-                            }
-                        },
-                          "quick_replies": quickMenu
-                    }
-                }
-                //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
-                  callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
-            } else {
-                console.log("No Data Found From Database");
-                sendHelpMessage(event);
-            }
-            connection.release();
-        });
-      });
-    } else if (categoryName == "Fan Magazine") {
-        //console.log("***************************", categoryName);
-        pool.getConnection(function(err, connection) {
-        connection.query('SELECT * FROM fk_pack_fan_magazines', function(err, rows) {
-            //console.log("*************************-after", categoryName);
-            console.log("*************************-after", rows);
-            if (err) {
-                console.log("Error While retriving content pack data from database:", err);
-            } else if (rows.length) {
-                var senderID = event.sender.id;
-                var contentList = [];
-                for (var i = 0; i < 5; i++) { //Construct request body
-                    var keyMap = {
-                        "title": rows[i].name,
-                        "image_url": rows[i].imageurl,
-                        //"item_url": rows[i].imageurl,
-                        //"subtitle":"We\'ve got the right hat for everyone."
-                        "buttons": [{
-                            "type": "postback",
-                            "title": "Read More",
-                            "payload": "USER_DEFINED_PAYLOAD"
-                        }]
-                    };
-                    contentList.push(keyMap);
-                }
-                var messageData = {
-                    "recipient": {
-                        "id": senderID
-                    },
-                    "message": {
-                        "attachment": {
-                            "type": "template",
-                            "payload": {
-                                "template_type": "generic",
-                                "elements": contentList
-                            }
-                        },
-                        "quick_replies": quickMenu
-                    }
-                }
-                //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
-                  callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
-            } else {
-                console.log("No Data Found From Database");
-                sendHelpMessage(event);
-            }
-            connection.release();
-        });
-      });
-    }else if (categoryName == "Login") {
+    }
+    // else if (categoryName == "Fan Clubs") {
+    //   pool.getConnection(function(err, connection) {
+    //     connection.query('SELECT * FROM fk_pack_fanclub', function(err, rows) {
+    //         if (err) {
+    //             console.log("Error While retriving content pack data from database:", err);
+    //         } else if (rows.length) {
+    //             var senderID = event.sender.id;
+    //             var contentList = [];
+    //
+    //             for (var i = 0; i < rows.length; i++) { //Construct request body
+    //                 var keyMap = {
+    //                     "title": rows[i].name,
+    //                     "image_url": rows[i].img_url,
+    //                     //"item_url": rows[i].imageurl,
+    //                     // "buttons": [{
+    //                     //     "type": "web_url",
+    //                     //     "url": rows[i].name,
+    //                     //     "title": rows[i].name
+    //                     // }]
+    //                     "buttons": [{
+    //                         "type": "postback",
+    //                         "title": rows[i].name,
+    //                         "payload": rows[i].name
+    //                     }]
+    //                 };
+    //                 contentList.push(keyMap);
+    //             }
+    //             var messageData = {
+    //                 "recipient": {
+    //                     "id": senderID
+    //                 },
+    //                 "message": {
+    //                     "attachment": {
+    //                         "type": "template",
+    //                         "payload": {
+    //                             "template_type": "generic",
+    //                             "elements": contentList
+    //                         }
+    //                     },
+    //                       "quick_replies": quickMenu
+    //                 }
+    //             }
+    //             //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+    //               callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+    //         } else {
+    //             console.log("No Data Found From Database");
+    //             sendHelpMessage(event);
+    //         }
+    //         connection.release();
+    //     });
+    //   });
+    // } else if (categoryName == "Fan Magazine") {
+    //     //console.log("***************************", categoryName);
+    //     pool.getConnection(function(err, connection) {
+    //     connection.query('SELECT * FROM fk_pack_fan_magazines', function(err, rows) {
+    //         //console.log("*************************-after", categoryName);
+    //         console.log("*************************-after", rows);
+    //         if (err) {
+    //             console.log("Error While retriving content pack data from database:", err);
+    //         } else if (rows.length) {
+    //             var senderID = event.sender.id;
+    //             var contentList = [];
+    //             for (var i = 0; i < 5; i++) { //Construct request body
+    //                 var keyMap = {
+    //                     "title": rows[i].name,
+    //                     "image_url": rows[i].imageurl,
+    //                     //"item_url": rows[i].imageurl,
+    //                     //"subtitle":"We\'ve got the right hat for everyone."
+    //                     "buttons": [{
+    //                         "type": "postback",
+    //                         "title": "Read More",
+    //                         "payload": "USER_DEFINED_PAYLOAD"
+    //                     }]
+    //                 };
+    //                 contentList.push(keyMap);
+    //             }
+    //             var messageData = {
+    //                 "recipient": {
+    //                     "id": senderID
+    //                 },
+    //                 "message": {
+    //                     "attachment": {
+    //                         "type": "template",
+    //                         "payload": {
+    //                             "template_type": "generic",
+    //                             "elements": contentList
+    //                         }
+    //                     },
+    //                     "quick_replies": quickMenu
+    //                 }
+    //             }
+    //             //callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+    //               callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+    //         } else {
+    //             console.log("No Data Found From Database");
+    //             sendHelpMessage(event);
+    //         }
+    //         connection.release();
+    //     });
+    //   });
+    // }
+    else if (categoryName == "Login") {
       if (categoryName == "Login"){
         var senderID = event.sender.id;
         var messageData = {
@@ -259,8 +261,40 @@ const sendContentPacks = (categoryName,event) => {
                      }]
                    }]
                  }
+               },
+               "quick_replies": quickreply
+        }
+        }
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+        }else {
+            console.log("No Data Found From Database");
+            sendHelpMessage(event);
+        }
+    }else if (categoryName == "Log Out") {
+      if (categoryName == "Log Out"){
+        var senderID = event.sender.id;
+        var messageData = {
+            "recipient": {
+                "id": senderID
+            },
+            "message": {
+               "attachment": {
+                 "type": "template",
+                 "payload": {
+                   "template_type": "generic",
+                   "elements": [{
+                     "title": "Welcome to HR-HelpDesk",
+                     "image_url": "http://www.example.com/images/m-bank.png",
+                     "buttons": [{
+                       "type": "account_unlink",
+                       //"url": "https://www.example.com/authorize"
+                     }]
+                   }]
+                 }
                }
-     }
+               "quick_replies": quickreply
+        }
         }
       //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
           callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
