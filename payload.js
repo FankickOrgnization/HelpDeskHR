@@ -242,28 +242,84 @@ const sendContentPacks = (categoryName,event) => {
             "recipient": {
                 "id": senderID
             },
-            "message": {
-               "attachment": {
-                 "type": "template",
-                 "payload": {
-                   "template_type": "generic",
-                   "elements": [{
-                     "title": "Welcome to HR-HelpDesk",
-                     "image_url": "http://www.example.com/images/m-bank.png",
-                     "buttons": [{
-                       "type": "account_link",
-                       "url": "https://www.example.com/authorize"
-                     },
-                     {
-                       "type": "postback",
-                       "title": "Skip",
-                       "payload": "USER_DEFINED_PAYLOAD"
-                     }]
-                   }]
-                 }
-               },
-               "quick_replies": quickreply
-        }
+        //     "message": {
+        //        "attachment": {
+        //          "type": "template",
+        //          "payload": {
+        //            "template_type": "generic",
+        //            "elements": [{
+        //              "title": "Welcome to HR-HelpDesk",
+        //              "image_url": "http://www.example.com/images/m-bank.png",
+        //              "buttons": [{
+        //                "type": "account_link",
+        //                "url": "https://www.example.com/authorize"
+        //              },
+        //              {
+        //                "type": "postback",
+        //                "title": "Skip",
+        //                "payload": "USER_DEFINED_PAYLOAD"
+        //              }]
+        //            }]
+        //          }
+        //        },
+        //        "quick_replies": quickreply
+        // }
+        "message":{
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"receipt",
+        "recipient_name":"Stephane Crozatier",
+        "order_number":"12345678902",
+        "currency":"USD",
+        "payment_method":"Visa 2345",
+        "order_url":"http://petersapparel.parseapp.com/order?order_id=123456",
+        "timestamp":"1428444852",
+        "elements":[
+          {
+            "title":"Classic White T-Shirt",
+            "subtitle":"100% Soft and Luxurious Cotton",
+            "quantity":2,
+            "price":50,
+            "currency":"USD",
+            "image_url":"http://petersapparel.parseapp.com/img/whiteshirt.png"
+          },
+          {
+            "title":"Classic Gray T-Shirt",
+            "subtitle":"100% Soft and Luxurious Cotton",
+            "quantity":1,
+            "price":25,
+            "currency":"USD",
+            "image_url":"http://petersapparel.parseapp.com/img/grayshirt.png"
+          }
+        ],
+        "address":{
+          "street_1":"1 Hacker Way",
+          "street_2":"",
+          "city":"Menlo Park",
+          "postal_code":"94025",
+          "state":"CA",
+          "country":"US"
+        },
+        "summary":{
+          "subtotal":75.00,
+          "shipping_cost":4.95,
+          "total_tax":6.19,
+          "total_cost":56.14
+        },
+        "adjustments":[
+          {
+            "name":"New Customer Discount",
+            "amount":20
+          },
+          {
+            "name":"$10 Off Coupon",
+            "amount":10
+          }
+        ]
+      }
+    }
+  }
         }
       //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
           callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
@@ -289,6 +345,11 @@ const sendContentPacks = (categoryName,event) => {
                      "buttons": [{
                        "type": "account_unlink",
                        //"url": "https://www.example.com/authorize"
+                     },
+                     {
+                       "type": "postback",
+                       "title": "Skip",
+                       "payload": "USER_DEFINED_PAYLOAD"
                      }]
                    }]
                  }
