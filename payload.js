@@ -856,7 +856,7 @@ function fbuserdetails(event, userid) {
         var senderID = event.sender.id;
         //var msg = 'Hi '+username+', A lot of exciting things are awaiting for you! Get kicking!';
         //var msg = 'Hi '+username+'! My name is Kicker.\n How may I come of any help to you today?';
-        var msg = 'Hi '+username+'! I am Hira, and I am your personal HR assistant.\n \nI can help you resolve all your HR queries?';
+        var msg = 'Hi '+username+'! I am Hira, and I am your personal HR assistant. I can help you resolve all your HR queries?\n\nProvide me your Employee ID';
   //var msg = 'Hi '+username+'! My name is Kicker.';
         console.log("--------:Response data:--------msg1 ", msg);
         var messageData = {
