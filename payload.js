@@ -567,7 +567,7 @@ const sendContentPacks = (categoryName,event) => {
             },
             "message":{
                 "text":"At Gemini we have Annual Leaves, Sick Leaves, Maternity Leaves, and Paternity Leaves.\n\nSelect the Leave Type to know more details",
-                [
+                "quick_replies":[
                   {
                     "content_type":"text",
                     "title":"Annual Leaves",
