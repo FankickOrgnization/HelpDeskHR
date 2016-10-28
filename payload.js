@@ -710,19 +710,8 @@ const sendContentPacks = (categoryName,event) => {
                      "id": senderID
                  },
                  "message":{
-                     "text":'Your notice period is 2 months…\n\nDownload the policy for more information…\n\n'+epurl+' \n\nAnything else you want to know…',
-                     "quick_replies":[
-                       {
-                         "content_type":"text",
-                         "title":"That’s it",
-                         "payload":"That’s it"
-                       },
-                       {
-                         "content_type":"text",
-                         "title":"Some other query",
-                         "payload":"Some other query"
-                       }
-                     ]
+                     "text":'Tell me what would you like to know about?',
+                     "quick_replies":quickreply
                    }
              }
            //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
@@ -856,7 +845,7 @@ function fbuserdetails(event, userid) {
         var senderID = event.sender.id;
         //var msg = 'Hi '+username+', A lot of exciting things are awaiting for you! Get kicking!';
         //var msg = 'Hi '+username+'! My name is Kicker.\n How may I come of any help to you today?';
-        var msg = 'Hi '+username+'! I am Hira, and I am your personal HR assistant. I can help you resolve all your HR queries?\n\nProvide me your Employee ID';
+        var msg = 'Hi '+username+'! I am Hira, and I am your personal HR assistant. I can help you resolve all your HR queries.\n\nProvide me your Employee ID to help you better.';
   //var msg = 'Hi '+username+'! My name is Kicker.';
         console.log("--------:Response data:--------msg1 ", msg);
         var messageData = {
