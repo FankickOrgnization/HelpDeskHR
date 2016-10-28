@@ -548,8 +548,47 @@ const sendContentPacks = (categoryName,event) => {
                 "id": senderID
             },
             "message":{
-                "text":"Let me know your employee ID…",
+                "text":"You have 12 Annual and 3 Sick Leaves in you Leave Basket",
                 "quick_replies":quickreply
+              }
+        }
+      //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
+          callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+        }else {
+            console.log("No Data Found From Database");
+            sendHelpMessage(event);
+        }
+    }else if (categoryName == "Leave Types") {
+      if (categoryName == "Leave Types"){
+        var senderID = event.sender.id;
+        var messageData = {
+            "recipient": {
+                "id": senderID
+            },
+            "message":{
+                "text":"At Gemini we have Annual Leaves, Sick Leaves, Maternity Leaves, and Paternity Leaves.\n\nSelect the Leave Type to know more details",
+                [
+                  {
+                    "content_type":"text",
+                    "title":"Annual Leaves",
+                    "payload":"Annual Leaves"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Sick Leaves",
+                    "payload":"Sick Leaves"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Maternity Leaves",
+                    "payload":"Maternity Leaves"
+                  },
+                  {
+                    "content_type":"text",
+                    "title":"Paternity Leaves",
+                    "payload":"Paternity Leaves"
+                  }
+                ]
               }
         }
       //  callSendAPI(messageData,'https://graph.facebook.com/v2.6/592208327626213/messages');
