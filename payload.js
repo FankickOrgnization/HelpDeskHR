@@ -37,12 +37,13 @@ var quickreply = [
     "content_type":"text",
     "title":"Exit Policies",
     "payload":"Exit Policies"
-  },
-  {
-    "content_type":"text",
-    "title":"Log In",
-    "payload":"Log In"
   }
+  // ,
+  // {
+  //   "content_type":"text",
+  //   "title":"Log In",
+  //   "payload":"Log In"
+  // }
 ];
 var moviesObj =  [
   {
