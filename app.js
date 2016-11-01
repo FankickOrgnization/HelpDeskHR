@@ -80,9 +80,6 @@ app.post('/webhook', function(req, res) {
                     //receivedDeliveryConfirmation(messagingEvent);
                 } else if (messagingEvent.postback) {
                     receivedpostback(messagingEvent);
-                } else if (messagingEvent.audio) {
-                  //  receivedpostback(messagingEvent);
-                  console.log("++++++++++++++++++++audio+++++++++++++++++++");
                 } else if (messagingEvent.read) {
                     //console.log("Webhook received unknown messagingEvent: ", messagingEvent);
                 } else {

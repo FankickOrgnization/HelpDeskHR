@@ -37,12 +37,13 @@ var quickreply = [
     "content_type":"text",
     "title":"Exit Policies",
     "payload":"Exit Policies"
-  },
-  {
-    "content_type":"text",
-    "title":"Log In",
-    "payload":"Log In"
   }
+  // ,
+  // {
+  //   "content_type":"text",
+  //   "title":"Log In",
+  //   "payload":"Log In"
+  // }
 ];
 var moviesObj =  [
   {
@@ -246,7 +247,7 @@ const sendContentPacks = (categoryName,event) => {
                "attachment": {
                  "type": "template",
                  "payload": {
-                   "template_type": "audio",
+                   "template_type": "generic",
                    "elements": [{
                      "title": "Welcome to HR-HelpDesk",
                      "image_url": "http://www.example.com/images/m-bank.png",
