@@ -267,42 +267,42 @@ pool.getConnection(function(err, connection) {
   });
 }
 
-function mainPacks(categoryName, event){
-  var senderID = event.sender.id;
-  var messageData = {
-      "recipient": {
-          "id": senderID
-      },
-      "message":{
-          "text":"Hey..Choose what excites you more",
-          "quick_replies":[
-            {
-              "content_type":"text",
-              "title":"Categories",
-              "payload":"Categories"
-            },
-            {
-              "content_type":"text",
-              "title":"Fan Clubs",
-              "payload":"Fan Clubs"
-            },
-            {
-              "content_type":"text",
-              "title":"Fan Magazine",
-              "payload":"Fan Magazine"
-            }
-            // ,
-            // {
-            //   "content_type":"text",
-            //   "title":"What can you do?",
-            //   "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
-            // }
-          ]
-        }
-  }
-  //callSendAPI(messageData, 'https://graph.facebook.com/v2.6/592208327626213/messages');
-    callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
-}
+// function mainPacks(categoryName, event){
+//   var senderID = event.sender.id;
+//   var messageData = {
+//       "recipient": {
+//           "id": senderID
+//       },
+//       "message":{
+//           "text":"Hey..Choose what excites you more",
+//           "quick_replies":[
+//             {
+//               "content_type":"text",
+//               "title":"Categories",
+//               "payload":"Categories"
+//             },
+//             {
+//               "content_type":"text",
+//               "title":"Fan Clubs",
+//               "payload":"Fan Clubs"
+//             },
+//             {
+//               "content_type":"text",
+//               "title":"Fan Magazine",
+//               "payload":"Fan Magazine"
+//             }
+//             // ,
+//             // {
+//             //   "content_type":"text",
+//             //   "title":"What can you do?",
+//             //   "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+//             // }
+//           ]
+//         }
+//   }
+//   //callSendAPI(messageData, 'https://graph.facebook.com/v2.6/592208327626213/messages');
+//     callSendAPI(messageData,'https://graph.facebook.com/v2.6/me/messages');
+// }
 
 // Quick_reply payload section Start ********************************************
 function receivedtextmessage(categoryName, event) {
@@ -368,7 +368,7 @@ function sendHelpMessage(event){
         console.log("--------:Response data:-------- timezone", userprofiledata.timezone);
         console.log("--------:Response data:--------gender ", userprofiledata.gender);
         var senderID = event.sender.id;
-        var msg = 'Hi '+username+'!,\n\nMay I know your query…';
+        var msg = 'Hi '+username+'!,\n\nLet me know your query..';
         //var msg = 'Hey '+username+', How are you?';
         console.log("--------:Response data:--------sendHelpMessage1", msg);
         var messageData = {
