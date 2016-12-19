@@ -253,7 +253,7 @@ const sendContentPacks = (categoryName,event) => {
                      "image_url": "http://www.example.com/images/m-bank.png",
                      "buttons": [{
                        "type": "account_link",
-                       "url": "sample.html"
+                       "url": "http://rankworldlive.azurewebsites.net/shareToSocial?ranklistid=3111"
                      },
                      {
                        "type": "postback",
