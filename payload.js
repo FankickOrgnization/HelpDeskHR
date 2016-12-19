@@ -253,7 +253,7 @@ const sendContentPacks = (categoryName,event) => {
                      "image_url": "http://www.example.com/images/m-bank.png",
                      "buttons": [{
                        "type": "account_link",
-                       "url": "https://www.example.com/authorize"
+                       "url": "sample.html"
                      },
                      {
                        "type": "postback",
