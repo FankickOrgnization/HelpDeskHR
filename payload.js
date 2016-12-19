@@ -253,7 +253,7 @@ const sendContentPacks = (categoryName,event) => {
                      "image_url": "http://www.example.com/images/m-bank.png",
                      "buttons": [{
                        "type": "account_link",
-                       "url": "http://www.pdf995.com/samples/pdf.pdf"
+                       "url": "https://geminiconsulting.greythr.com/login.do"
                      },
                      {
                        "type": "postback",
