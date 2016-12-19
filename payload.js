@@ -38,12 +38,12 @@ var quickreply = [
     "title":"Exit Policies",
     "payload":"Exit Policies"
   }
-  // ,
-  // {
-  //   "content_type":"text",
-  //   "title":"Log In",
-  //   "payload":"Log In"
-  // }
+  ,
+  {
+    "content_type":"text",
+    "title":"Log In",
+    "payload":"Log In"
+  }
 ];
 var moviesObj =  [
   {
@@ -343,22 +343,10 @@ const sendContentPacks = (categoryName,event) => {
                    "elements": [{
                      "title": "Welcome to HR-HelpDesk",
                      "image_url": "http://www.example.com/images/m-bank.png",
-                     "buttons": [
-                    //    {
-                    //    "type": "account_unlink",
-                    //    //"url": "https://www.example.com/authorize"
-                    //  },
-               {
-                  "type":"postback",
-                  "title":"Forecast",
-                  "payload":"forecast"
-               },
-               {
-                  "type":"web_url",
-                  "title":"Bot created at ChatFlow",
-                  "url":"https://chatflow.kitt.ai"
-               },
-
+                     "buttons": [{
+                       "type": "account_unlink",
+                       //"url": "https://www.example.com/authorize"
+                     },
                      {
                        "type": "postback",
                        "title": "Skip",
