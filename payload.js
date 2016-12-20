@@ -241,6 +241,7 @@ const sendContentPacks = (categoryName,event) => {
         var senderID = event.sender.id;
         var numid = 3111;
         var idurl = 'http://rankworldlive.azurewebsites.net/shareToSocial?ranklistid='+numid+'';
+        var weburl= 'sample.html';
         console.log("idurl ", idurl);
         var messageData = {
             "recipient": {
@@ -260,14 +261,13 @@ const sendContentPacks = (categoryName,event) => {
                      },
                      {
                        "type": "web_url",
-                      "url": "sample.html",
+                      "url": weburl,
                       "title":"Click Here"
                      },
-
                      {
-                       "type": "postback",
-                       "title": "Skip",
-                       "payload": "USER_DEFINED_PAYLOAD"
+                      "type": "web_url",
+                      "url": idurl,
+                      "title":"Click Here"
                      }]
                    }]
                  }
