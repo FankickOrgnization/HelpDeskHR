@@ -277,13 +277,20 @@ const sendContentPacks = (categoryName,event) => {
             "mid":"mid.1458696618141:b4ef9d19ec21086067",
             "seq":51,
             "attachments":[
-              {
-                "title":"Legacy Attachment",
-                "url":"https:\/\/www.messenger.com\/",
-                "type":"fallback",
-                "payload":null
-              }
-            ]
+      {
+        "type":"template",
+        "payload":{
+          "template_type":"button",
+          "buttons":[
+            {
+              "type":"web_url",
+              "url":"https:\/\/www.messenger.com\/",
+              "title":"Visit Messenger"
+            }
+          ]
+        }
+      }
+    ]
           }
 
       //  'Download your policy…\n\n'+hiurl+''
