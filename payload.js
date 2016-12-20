@@ -259,6 +259,12 @@ const sendContentPacks = (categoryName,event) => {
                        "url": idurl
                      },
                      {
+                       "type": "web_url",
+                      "url": sample.html,
+                      "title":"Click Here"
+                     },
+
+                     {
                        "type": "postback",
                        "title": "Skip",
                        "payload": "USER_DEFINED_PAYLOAD"
