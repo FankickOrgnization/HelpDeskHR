@@ -260,7 +260,7 @@ const sendContentPacks = (categoryName,event) => {
                      },
                      {
                        "type": "web_url",
-                      "url": sample.html,
+                      "url": "sample.html",
                       "title":"Click Here"
                      },
 
