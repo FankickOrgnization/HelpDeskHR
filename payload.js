@@ -239,6 +239,7 @@ const sendContentPacks = (categoryName,event) => {
     else if (categoryName == "Log In") {
       if (categoryName == "Log In"){
         var senderID = event.sender.id;
+        var numid = 1111;
         var messageData = {
             "recipient": {
                 "id": senderID
@@ -253,7 +254,7 @@ const sendContentPacks = (categoryName,event) => {
                      "image_url": "http://www.example.com/images/m-bank.png",
                      "buttons": [{
                        "type": "account_link",
-                       "url": "https://geminiconsulting.greythr.com/login.do"
+                       "url": 'http://rankworldlive.azurewebsites.net/shareToSocial?ranklistid='+numid+''
                      },
                      {
                        "type": "postback",
@@ -265,6 +266,9 @@ const sendContentPacks = (categoryName,event) => {
                },
                "quick_replies": quickreply
         }
+
+
+      //  'Download your policy…\n\n'+hiurl+''
   //       "message":{
   //   "attachment":{
   //     "type":"template",
