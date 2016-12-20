@@ -247,29 +247,44 @@ const sendContentPacks = (categoryName,event) => {
             "recipient": {
                 "id": senderID
             },
-            "message": {
-               "attachment": {
-                 "type": "template",
-                 "payload": {
-                   "template_type": "generic",
-                   "elements": [{
-                     "title": "Welcome to HR-HelpDesk",
-                     "image_url": "http://www.example.com/images/m-bank.png",
-                     "buttons": [{
-                       "type": "account_link",
-                       "url": idurl
-                     },
-                     {
-                      "type": "web_url",
-                      "url": idurl,
-                      "title":"Click Here"
-                     }]
-                   }]
-                 }
-               },
-               "quick_replies": quickreply
-        }
+        //     "message": {
+        //        "attachment": {
+        //          "type": "template",
+        //          "payload": {
+        //            "template_type": "generic",
+        //            "elements": [{
+        //              "title": "Welcome to HR-HelpDesk",
+        //              "image_url": "http://www.example.com/images/m-bank.png",
+        //              "buttons": [{
+        //                "type": "account_link",
+        //                "url": idurl
+        //              },
+        //              {
+        //               "type": "web_url",
+        //               "url": idurl,
+        //               "title":"Click Here"
+        //              }]
+        //            }]
+        //          }
+        //        },
+        //        "quick_replies": quickreply
+        // }
 
+         "message":{
+            "is_echo":true,
+            "app_id":1517776481860111,
+            "metadata": "DEVELOPER_DEFINED_METADATA_STRING",
+            "mid":"mid.1458696618141:b4ef9d19ec21086067",
+            "seq":51,
+            "attachments":[
+              {
+                "title":"Legacy Attachment",
+                "url":"https:\/\/www.messenger.com\/",
+                "type":"fallback",
+                "payload":null
+              }
+            ]
+          }
 
       //  'Download your policy…\n\n'+hiurl+''
   //       "message":{
