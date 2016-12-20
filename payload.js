@@ -240,7 +240,7 @@ const sendContentPacks = (categoryName,event) => {
       if (categoryName == "Log In"){
         var senderID = event.sender.id;
         var numid = 3111;
-        var idurl = 'http://rankworldlive.azurewebsites.net/shareToSocial?ranklistid='+numid+'';
+        var idurl = 'https://geminiconsulting.greythr.com/login.do';
         var weburl= 'sample.html';
         console.log("idurl ", idurl);
         var messageData = {
