@@ -240,6 +240,7 @@ const sendContentPacks = (categoryName,event) => {
       if (categoryName == "Log In"){
         var senderID = event.sender.id;
         var numid = 1111;
+        var idurl = 'http://rankworldlive.azurewebsites.net/shareToSocial?ranklistid='+numid+'';
         var messageData = {
             "recipient": {
                 "id": senderID
@@ -254,7 +255,7 @@ const sendContentPacks = (categoryName,event) => {
                      "image_url": "http://www.example.com/images/m-bank.png",
                      "buttons": [{
                        "type": "account_link",
-                       "url": 'http://rankworldlive.azurewebsites.net/shareToSocial?ranklistid='+numid+''
+                       "url": idurl
                      },
                      {
                        "type": "postback",
